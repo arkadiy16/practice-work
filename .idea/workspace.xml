@@ -38,6 +38,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -107,7 +108,10 @@
       <workItem from="1653252144890" duration="6933000" />
       <workItem from="1653259146830" duration="535000" />
       <workItem from="1653259700213" duration="860000" />
-      <workItem from="1653260576541" duration="91000" />
+      <workItem from="1653260576541" duration="232000" />
+      <workItem from="1653260821101" duration="233000" />
+      <workItem from="1653261063295" duration="37000" />
+      <workItem from="1653261108804" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="done">
       <created>1653256708240</created>
@@ -130,7 +134,28 @@
       <option name="project" value="LOCAL" />
       <updated>1653260334582</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="test1">
+      <created>1653260690925</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1653260690925</updated>
+    </task>
+    <task id="LOCAL-00005" summary="test2">
+      <created>1653260718002</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1653260718002</updated>
+    </task>
+    <task id="LOCAL-00006" summary="test3">
+      <created>1653260770848</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1653260770848</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,7 +164,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="done" />
     <MESSAGE value="third practic" />
-    <option name="LAST_COMMIT_MESSAGE" value="third practic" />
+    <MESSAGE value="test1" />
+    <MESSAGE value="test2" />
+    <MESSAGE value="test3" />
+    <option name="LAST_COMMIT_MESSAGE" value="test3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/practice_work$Regex_Version_of_the_strip___Method.coverage" NAME="Regex Version of the strip() Method Coverage Results" MODIFIED="1653260303797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/re" />
