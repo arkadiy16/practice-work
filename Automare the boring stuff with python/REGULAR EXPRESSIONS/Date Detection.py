@@ -33,9 +33,9 @@ def main(l_date):
 
 
 r_date = re.compile(r'''
-                    ([0-2][0-9]|3[0-1])/       # re for day 01-31
-                    (0[0-9]|1[0-3])/               # re for day 01-12
-                    [1-2][0-9]{3}                  # re for year 1000-2999
+                    ([0-2][0-9]|3[0-1])/       # REGULAR EXPRESSIONS for day 01-31
+                    (0[0-9]|1[0-3])/               # REGULAR EXPRESSIONS for day 01-12
+                    [1-2][0-9]{3}                  # REGULAR EXPRESSIONS for year 1000-2999
                     ''',
                     re.X)
 
