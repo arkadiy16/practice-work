@@ -34,3 +34,8 @@ os.chdir('C:\\Users\\Docs\\NewFolder')
  
 d = Path.cwd()
 print(d) # C:\Users\Docs\NewFolder
+
+
+# Introdaction with os.makedirs() and Path().mkdir().
+os.makedirs('C:\\Users\\Desktop\\New\\Foo\\Bar') # Create new folders: \New\Foo\Bar
+Path('C:\\Users\\1\\Desktop\\FBar').mkdir() # Create only 1 folder: \FBar
