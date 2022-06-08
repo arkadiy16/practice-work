@@ -1,4 +1,5 @@
 import os
+import shelve
 from pathlib import Path
 
 
@@ -100,3 +101,20 @@ print(winDir.is_dir()) # True
 print(noDir.is_dir()) # False
 print(rimFile.is_dir()) # False
 
+
+# Saving variables with the shelve module and pprint.pformat() function.
+with  shelve.open('mydata') as shelfFile: # Will create 3 files .bac, .dat, .dir.
+    cats = ['Zophie', 'Pooka', 'Simon']
+    dogs = ['Jack', 'Russel', 'Simon']
+    shelfFile['cats'] = cats
+    shelfFile['dogs'] = dogs
+
+with  shelve.open('mydata') as shelfFile:
+    print(type(shelfFile)) # <class 'shelve.DbfilenameShelf'>
+    print(shelfFile) # <shelve.DbfilenameShelf object at 0x000001C1B1BB06D0>
+    print(dict(shelfFile)) # {'cats': ['Zophie', 'Pooka', 'Simon'], 'dogs': ['Jack', 'Russel', 'Simon']}
+    print(list(shelfFile.keys())) # ['cats', 'dogs']
+    print(list(shelfFile.values())) # [['Zophie', 'Pooka', 'Simon'], ['Jack', 'Russel', 'Simon']]
+    
+
+    
