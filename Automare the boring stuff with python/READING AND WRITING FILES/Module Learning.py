@@ -1,5 +1,6 @@
 import os
 import shelve
+import pprint
 from pathlib import Path
 
 
@@ -116,5 +117,13 @@ with  shelve.open('mydata') as shelfFile:
     print(list(shelfFile.keys())) # ['cats', 'dogs']
     print(list(shelfFile.values())) # [['Zophie', 'Pooka', 'Simon'], ['Jack', 'Russel', 'Simon']]
     
+
+# pprint.pformat() only for basic types: int, float, str, dict, list etc..    
+with open('myCats.py', 'w') as fileObj: # Will create .py file in cwd.
+    cats = [{'name': 'Zophie', 'desc': 'chubby'}, {'name': 'Pooka', 'desc': 'fluffy'}]
+    fileObj.write('cats = ' + pprint.pformat(cats) + '\n') # pprint.pformat() for converting list into string.
+
+import cats # Import module from cwd.
+print(cats.cats) # Will print cats list.
 
     
