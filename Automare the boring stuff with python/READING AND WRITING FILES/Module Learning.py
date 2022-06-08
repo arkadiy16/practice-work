@@ -67,6 +67,7 @@ print(os.path.dirname(p), os.path.basename(p), sep='\n')
 print(os.path.split(p)) # Splits path to dirname(path to folder in which file is) and basename(full name of file). 
 print(str(p).split(os.sep)) # os.sep return correct folder-separating slash for OS in which program will run.
 
+
 # Learning for finding file size and folder contents.
 os.path.getsize(r'C:\Games\RimWorld v1.3.3076 rev689\RimWorldWin64.exe') # 650752 in bytes. Return size of FILE!
 os.listdir(r'C:\Games\RimWorld v1.3.3076 rev689')   # ['Data', 'EULA.txt', 'Licenses.txt', 'Mods', 'ModUpdating.txt', 
@@ -76,6 +77,26 @@ os.listdir(r'C:\Games\RimWorld v1.3.3076 rev689')   # ['Data', 'EULA.txt', 'Lice
                                                     #  ]
                                                       
 
+# Introduction with Path.glob() patterns.
+p = Path(r'C:\Games\RimWorld v1.3.3076 rev689')
+print(list(p.glob('*.exe'))) # Will return list of all path objects to .exe files in folder.
+print(list(p.glob('*'))) # Do same that do os.listdir(p).
 
 
+# Introduction with path validation.
+winDir = Path('C:\\Windows')
+noDir = Path('C:\\This\\Direction\\Does\\NOt\\Exist')
+rimFile = Path(r'C:\Games\RimWorld v1.3.3076 rev689\RimWorldWin64.exe')
+
+print(winDir.exists()) # True 
+print(noDir.exists()) # False
+print(rimFile.exists()) # True
+
+print(winDir.is_file()) # False
+print(noDir.is_file()) # False
+print(rimFile.is_file()) # True
+
+print(winDir.is_dir()) # True
+print(noDir.is_dir()) # False
+print(rimFile.is_dir()) # False
 
