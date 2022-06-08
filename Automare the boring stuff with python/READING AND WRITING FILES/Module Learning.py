@@ -57,3 +57,25 @@ print(os.path.abspath('..')) # Absolute path to parent folder cwd.
 print(os.path.abspath('\\')) # Local disk of cwd.
 
 print(os.path.relpath('C:\\Users\\1\\Desktop', '\\Users')) # Turning absolute path to relative.
+
+
+# Introduction with parts of a file path.
+p = Path(r'C:\Users\1\Documents\name.txt')
+print(p.anchor, p.parent, p.name, p.stem, p.suffix, p.drive, sep='\n')
+print(p.parents[0], p.parents[1], p.parents[-1], sep='\n') # path_obj.parents[ancestor_generation].
+print(os.path.dirname(p), os.path.basename(p), sep='\n')
+print(os.path.split(p)) # Splits path to dirname(path to folder in which file is) and basename(full name of file). 
+print(str(p).split(os.sep)) # os.sep return correct folder-separating slash for OS in which program will run.
+
+# Learning for finding file size and folder contents.
+os.path.getsize(r'C:\Games\RimWorld v1.3.3076 rev689\RimWorldWin64.exe') # 650752 in bytes. Return size of FILE!
+os.listdir(r'C:\Games\RimWorld v1.3.3076 rev689')   # ['Data', 'EULA.txt', 'Licenses.txt', 'Mods', 'ModUpdating.txt', 
+                                                    #  'MonoBleedingEdge', 'Readme.txt', 'RimWorldWin64.exe', 'RimWorldWin64_Data', 
+                                                    #  'ScenarioPreview.jpg', 'Source', 'steam_appid.txt', 'unins000.dat', 'unins000.exe', 
+                                                    #  'UnityCrashHandler64.exe', 'UnityPlayer.dll', 'Version.txt'
+                                                    #  ]
+                                                      
+
+
+
+
