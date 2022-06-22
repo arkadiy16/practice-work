@@ -2,8 +2,7 @@
 # Usage: py.exe mcb_p.pyw save <keyword> - Saves clipboard to keyword.
 #        py.exe mcb_p.pyw <keyword> - Loads keyword to clipboard.
 #        py.exe mcb_p.pyw list - Loads all keywords to clipboard.
-#        py.exe mcb_p.pyw del <keyword> - Delete keyword from the shelve.
-#        py.exe mcb_p.pyw delete - Delete all keywords from the shelve.
+#        py.exe mcb_p.pyw delete <keyword> - Delete keyword from the shelve.
 
 import shelve, pyperclip, sys
 
