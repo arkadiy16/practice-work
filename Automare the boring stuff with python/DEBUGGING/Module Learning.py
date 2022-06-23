@@ -30,3 +30,18 @@ logging.critical('The program is unable to recover!')
 # Logging to file.
 logging.basicConfig(filename='logfile.txt', level=logging.DEBUG, 
                     format=' %(asctime)s - %(levelname)s -  %(message)s')
+
+# Assert statement that triggers an AssertionError if the variable spam is an integer less than 10.
+assert spam > 10 and type(spam) == int
+
+# Assert statement that triggers an AssertionError if the variables eggs and bacon contain strings 
+# that are the same as each other, even if their cases are different.
+assert isinstance(eggs, str) and isinstance(bacon, str) and eggs.lower() == bacon.lower()
+
+# Write an assert statement that always triggers an AssertionError.
+assert False
+
+# What are the two lines that your program must have in order to have logging.debug() send a logging 
+# message to a file named programLog.txt?
+import logging
+logging.basicConfig(filename='programmLog.txt')
