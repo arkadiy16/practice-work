@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d46ffc32-0e73-483a-b3e8-de38d7965a49" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING/com_rating_joyreactor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING/com_rating_joyreactor.py" afterDir="false" />
     </list>
@@ -180,7 +181,7 @@
       <workItem from="1653259700213" duration="860000" />
       <workItem from="1653260576541" duration="91000" />
       <workItem from="1656702981837" duration="1293000" />
-      <workItem from="1658257368374" duration="15634000" />
+      <workItem from="1658257368374" duration="18239000" />
     </task>
     <task id="LOCAL-00001" summary="done">
       <created>1653256708240</created>
@@ -210,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658271638715</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="third practic">
+      <created>1658300105709</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1658300105709</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +233,7 @@
     <SUITE FILE_PATH="coverage/practice_work$searchpypi.coverage" NAME="searchpypi Coverage Results" MODIFIED="1658257648932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
     <SUITE FILE_PATH="coverage/practice_work$Regex_Version_of_the_strip___Method.coverage" NAME="Regex Version of the strip() Method Coverage Results" MODIFIED="1653260303797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/re" />
     <SUITE FILE_PATH="coverage/practice_work$Strong_Password_Detection.coverage" NAME="Strong Password Detection Coverage Results" MODIFIED="1653257801190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/re" />
-    <SUITE FILE_PATH="coverage/practice_work$com_rating_joyreactor__1_.coverage" NAME="com_rating_joyreactor (1) Coverage Results" MODIFIED="1658272059889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
+    <SUITE FILE_PATH="coverage/practice_work$com_rating_joyreactor__1_.coverage" NAME="com_rating_joyreactor (1) Coverage Results" MODIFIED="1658303405331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
     <SUITE FILE_PATH="coverage/practice_work$Learning_Module.coverage" NAME="Learning Module Coverage Results" MODIFIED="1656703590868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
     <SUITE FILE_PATH="coverage/practice_work$searchcomments.coverage" NAME="com_rating_joyreactor Coverage Results" MODIFIED="1658271712694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
   </component>

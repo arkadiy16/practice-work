@@ -9,7 +9,7 @@ import logging
 logging.basicConfig(level=logging.WARNING, format=' %(asctime)s - %(levelname)s -  %(message)s')
 
 
-def main(name):
+def main(name, pgs=None):
     """ Function for collecting data from site, sort them, and write in .txt file.
     
     Function will take string(name) and create new .txt file with data    
@@ -19,10 +19,11 @@ def main(name):
     url = f'https://joyreactor.cc/user/{name}/comments'
     res = requests.get(url)
     soup = bs4.BeautifulSoup(res.text, 'html.parser')
-    pages = int(soup.select_one('.pagination_expanded').select('a')[-1].get_text())
-    logging.warning(pages)
+    if not pgs:
+        pgs = int(soup.select_one('.pagination_expanded').select('a')[-1].get_text())
+    logging.warning(pgs)
     # Loop for every page.
-    for page_num in range(2, 120):
+    for page_num in range(2, pgs + 1):
         try:
             linkElems = soup.select('.txt')
             # Loop for every comment in page.
@@ -53,10 +54,8 @@ def main(name):
     # Write comment info in file.
     with open(f'{name}_comments_rating.txt', 'w') as f:
         for dat in data:
-            try:
-                f.write(f'post:#{dat[0][6:]}, comment#{dat[1][7:]}, "{dat[2]}", rating:{dat[3]}\n')
-            except TypeError:
-                f.write('TextIOWrapper.write() takes no keyword arguments')
+            f.write(f'post:#{dat[0][6:]}, comment#{dat[1][7:]}, "{dat[2]}", rating:{dat[3]}\n')
+
 
 
 name = input()
