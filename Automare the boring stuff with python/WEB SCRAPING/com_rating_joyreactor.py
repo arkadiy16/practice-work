@@ -1,3 +1,8 @@
+# This project used to collect all comments of a person from joyreactor.cc
+# and sort them by rating, then this data will be write in new .txt file
+# named <person_nicname_on_site>_comments_rating.txt in format: 
+# post_num, comment_num, comment, comment_rating.
+
 import requests, bs4
 import logging
 
@@ -5,6 +10,10 @@ logging.basicConfig(level=logging.WARNING, format=' %(asctime)s - %(levelname)s 
 
 
 def main(name):
+    """ Function for collecting data from site, sort them, and write in .txt file.
+    
+    Function will take string(name) and create new .txt file with data    
+    """
     print('Searching...')
     data = []
     url = f'https://joyreactor.cc/user/{name}/comments'
