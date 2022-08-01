@@ -1,62 +1,60 @@
-import random
-import logging
+import random, datetime
+import logging, time
 
-logging.basicConfig(level=logging.CRITICAL, format=' %(asctime)s - %(levelname)s -  %(message)s')
-
-months = {'Jan': 31, 'Feb': 28, 'Mar': 31,
-          'Apr': 30, 'May': 31, 'Jun': 30,
-          'Jul': 31, 'Aug': 31, 'Sep': 30,
-          'Oct': 31, 'Nov': 30, 'Dec': 31
-          }
+logging.basicConfig(level=logging.INFO, format=' %(asctime)s - %(levelname)s -  %(message)s')
 
 
 # Function for getting random month and day.
 def rnd_bd():
-    months_keys = list(months.keys())
-    random.shuffle(months_keys)
-    month = months_keys[0]
-    day = random.randint(1, months[month])
-    return month, str(day)
+    startOfYear = datetime.date(2001, 1, 1)
+    randomNumberOfDays = datetime.timedelta(random.randint(0, 364))
+    birthday = startOfYear + randomNumberOfDays
+    return birthday.strftime('%b %d').split()
 
 
 # birthdays data.
-def data_bd(group):
+def data_bd(group, first=False):
     # For more beautiful output in first simulation.
-    bd_group = {'Jan': [], 'Feb': [], 'Mar': [],
-                'Apr': [], 'May': [], 'Jun': [],
-                'Jul': [], 'Aug': [], 'Sep': [],
-                'Oct': [], 'Nov': [], 'Dec': []
-                }
-    for _ in range(group):
-        m, d = rnd_bd()
-        logging.info(m)
-        logging.info(d)
-        bd_group[m].append(d)
-        logging.warning(bd_group)
     bd_list = []
-    logging.debug(bd_group)
-    for m, days in bd_group.items():
-        if days:
-            for d in days:
-                bd_list.append(f'{m} {d}')
-    logging.debug(bd_list)
+    if first:
+        bd_group = {'Jan': [], 'Feb': [], 'Mar': [],
+                    'Apr': [], 'May': [], 'Jun': [],
+                    'Jul': [], 'Aug': [], 'Sep': [],
+                    'Oct': [], 'Nov': [], 'Dec': []
+                    }
+
+        for _ in range(group):
+            m, d = rnd_bd()
+            bd_group[m].append(d)
+        for m, days in bd_group.items():
+            if days:
+                for d in days:
+                    bd_list.append(f'{m} {d}')
+    else:
+        for _ in range(group):
+            m, d = rnd_bd()
+            bd_list.append(f'{m} {d}')
     return bd_list
 
 
 # same birthday checker.
-def checker(bd_group):
-    match_bd = False
-    while bd_group:
-        d = bd_group.pop()
-        if d in bd_group:
-            match_bd = True
-            break
-    return [match_bd, d]
+def checker(bd_group, first=False):
+    if len(bd_group) == len(set(bd_group)):
+        return False,
+    elif first:
+        while bd_group:
+            d = bd_group.pop()
+            logging.info(d)
+            if d in bd_group:
+                return (True, d)
+    else:
+        return (True,)
 
 
 # first simulation function.
 def f_sim(bd_amount):
-    data = data_bd(bd_amount)
+    data = data_bd(bd_amount, first=True)
+
     for i, date in enumerate(data):
         if i + 1 == len(data):
             print(date + '.')
@@ -64,11 +62,12 @@ def f_sim(bd_amount):
             print(date, end=', ')
         if not (i + 1) % 10:
             print()
-    bool_date = checker(data)
-    if not bool_date[0]:
-        h = 'nobody have a birthday with another one in the same day.'
-    else:
+    bool_date = checker(data, first=True)
+    if bool_date[0]:
         h = f'multiple people have a birthday on {bool_date[1]}'
+    else:
+        h = 'nobody have a birthday with another one in the same day.'
+
     print(f'In this simulation, {h}')
 
 
@@ -80,6 +79,7 @@ def LLW(bd_amount):
     for i in range(1, 100001):
         if '0000' in str(i):
             print(f'{i} simulations run.')
+
         data = data_bd(bd_amount)
         if checker(data)[0]:
             total += 1
@@ -112,6 +112,7 @@ def main(bd_amount):
     return bd_amount, percentages, total
 
 
+start = time.time()
 with open('birthday_paradox.txt', 'w') as file:
     for i in [5, 10, 20, 23, 30, 40, 50, 60, 70, 75, 100]:
         bd, perc, t = main(i)
@@ -119,3 +120,5 @@ with open('birthday_paradox.txt', 'w') as file:
         file.write(f'birthday in that group {t} times. This means that {bd} people\n')
         file.write(f'have a {perc} % chance of having a matching birthday in their group.\n')
         file.write('\n')
+end = time.time()
+print(end - start)
