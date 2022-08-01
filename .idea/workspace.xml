@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d46ffc32-0e73-483a-b3e8-de38d7965a49" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/The Big Book of Small Python Projects/project1_Bagels.py" beforeDir="false" afterPath="$PROJECT_DIR$/The Big Book of Small Python Projects/project1_Bagels.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/The Big Book of Small Python Projects/project2_Birthday_Paradox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +59,8 @@
       <recent name="G:\Programmpractice work\practice-work\The Big Book of Small Python Projects" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.project1_Bagels">
-    <configuration name="Downloading All XKCD Comics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.project2_Birthday_Paradox">
+    <configuration name="Python Console (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice-work" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -67,12 +68,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING/Downloading All XKCD Comics.py" />
+      <option name="SCRIPT_NAME" value="/Python Console" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -81,7 +82,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="com_rating_joyreactor (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Python Console" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice-work" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -89,12 +90,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING/com_rating_joyreactor.py" />
+      <option name="SCRIPT_NAME" value="/Python Console" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -147,7 +148,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="selenium_learning" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="project2_Birthday_Paradox" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice-work" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -155,12 +156,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Big Book of Small Python Projects" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING/selenium_learning.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Big Book of Small Python Projects/project2_Birthday_Paradox.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -171,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.project2_Birthday_Paradox" />
+        <item itemvalue="Python.Python Console (1)" />
+        <item itemvalue="Python.Python Console" />
         <item itemvalue="Python.project1_Bagels" />
         <item itemvalue="Python.image_site_downloader" />
-        <item itemvalue="Python.selenium_learning" />
-        <item itemvalue="Python.Downloading All XKCD Comics" />
-        <item itemvalue="Python.com_rating_joyreactor (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +195,7 @@
       <workItem from="1656702981837" duration="1293000" />
       <workItem from="1658257368374" duration="22896000" />
       <workItem from="1658677581979" duration="1025000" />
-      <workItem from="1659123339347" duration="9820000" />
+      <workItem from="1659123339347" duration="21594000" />
     </task>
     <task id="LOCAL-00001" summary="done">
       <created>1653256708240</created>
@@ -266,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659342164385</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="third practic">
+      <created>1659343187514</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1659343187514</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,13 +288,16 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/practice_work$image_site_downloader.coverage" NAME="image_site_downloader Coverage Results" MODIFIED="1659340441070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
     <SUITE FILE_PATH="coverage/practice_work$searchpypi.coverage" NAME="searchpypi Coverage Results" MODIFIED="1658257648932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
-    <SUITE FILE_PATH="coverage/practice_work$Regex_Version_of_the_strip___Method.coverage" NAME="Regex Version of the strip() Method Coverage Results" MODIFIED="1653260303797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/re" />
     <SUITE FILE_PATH="coverage/practice_work$Strong_Password_Detection.coverage" NAME="Strong Password Detection Coverage Results" MODIFIED="1653257801190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/re" />
+    <SUITE FILE_PATH="coverage/practice_work$Python_Console__1_.coverage" NAME="Python Console (1) Coverage Results" MODIFIED="1659380892608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/practice_work$searchcomments.coverage" NAME="com_rating_joyreactor Coverage Results" MODIFIED="1658271712694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
+    <SUITE FILE_PATH="coverage/practice_work$selenium_learning.coverage" NAME="selenium_learning Coverage Results" MODIFIED="1659124564544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
+    <SUITE FILE_PATH="coverage/practice_work$Regex_Version_of_the_strip___Method.coverage" NAME="Regex Version of the strip() Method Coverage Results" MODIFIED="1653260303797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/re" />
     <SUITE FILE_PATH="coverage/practice_work$com_rating_joyreactor__1_.coverage" NAME="com_rating_joyreactor (1) Coverage Results" MODIFIED="1658303405331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
     <SUITE FILE_PATH="coverage/practice_work$Learning_Module.coverage" NAME="Learning Module Coverage Results" MODIFIED="1656703590868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
     <SUITE FILE_PATH="coverage/practice_work$Downloading_All_XKCD_Comics.coverage" NAME="Downloading All XKCD Comics Coverage Results" MODIFIED="1658356817288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
     <SUITE FILE_PATH="coverage/practice_work$Bagels.coverage" NAME="project1_Bagels Coverage Results" MODIFIED="1659341863653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/practice_work$searchcomments.coverage" NAME="com_rating_joyreactor Coverage Results" MODIFIED="1658271712694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
-    <SUITE FILE_PATH="coverage/practice_work$selenium_learning.coverage" NAME="selenium_learning Coverage Results" MODIFIED="1659124564544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
+    <SUITE FILE_PATH="coverage/practice_work$Python_Console.coverage" NAME="Python Console Coverage Results" MODIFIED="1659380881337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/practice_work$project2_Birthday_Paradox.coverage" NAME="project2_Birthday_Paradox Coverage Results" MODIFIED="1659385303383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
   </component>
 </project>
