@@ -1,3 +1,6 @@
+from fileinput import filename
+
+
 bitmap = """
 ....................................................................
    **************   *  *** **  *      ******************************
@@ -40,6 +43,3 @@ def main():
     # message = input('> ')
     message = 'Hello!'
     print(*bitmap_replacer(message, bitmap), sep='\n')
-
-
-main()
