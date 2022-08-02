@@ -1,0 +1,44 @@
+Out of 100,000 simulations of 5 people, there was a matching
+birthday in that group 2708 times. This means that 5 people
+have a 2.708 % chance of having a matching birthday in their group.
+
+Out of 100,000 simulations of 10 people, there was a matching
+birthday in that group 11566 times. This means that 10 people
+have a 11.566 % chance of having a matching birthday in their group.
+
+Out of 100,000 simulations of 20 people, there was a matching
+birthday in that group 41372 times. This means that 20 people
+have a 41.372 % chance of having a matching birthday in their group.
+
+Out of 100,000 simulations of 23 people, there was a matching
+birthday in that group 50582 times. This means that 23 people
+have a 50.582 % chance of having a matching birthday in their group.
+
+Out of 100,000 simulations of 30 people, there was a matching
+birthday in that group 70820 times. This means that 30 people
+have a 70.82 % chance of having a matching birthday in their group.
+
+Out of 100,000 simulations of 40 people, there was a matching
+birthday in that group 89177 times. This means that 40 people
+have a 89.177 % chance of having a matching birthday in their group.
+
+Out of 100,000 simulations of 50 people, there was a matching
+birthday in that group 96994 times. This means that 50 people
+have a 96.994 % chance of having a matching birthday in their group.
+
+Out of 100,000 simulations of 60 people, there was a matching
+birthday in that group 99422 times. This means that 60 people
+have a 99.422 % chance of having a matching birthday in their group.
+
+Out of 100,000 simulations of 70 people, there was a matching
+birthday in that group 99914 times. This means that 70 people
+have a 99.914 % chance of having a matching birthday in their group.
+
+Out of 100,000 simulations of 75 people, there was a matching
+birthday in that group 99970 times. This means that 75 people
+have a 99.97 % chance of having a matching birthday in their group.
+
+Out of 100,000 simulations of 100 people, there was a matching
+birthday in that group 100000 times. This means that 100 people
+have a 100.0 % chance of having a matching birthday in their group.
+
