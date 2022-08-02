@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d46ffc32-0e73-483a-b3e8-de38d7965a49" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/The Big Book of Small Python Projects/asf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/The Big Book of Small Python Projects/project3_bitmap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/The Big Book of Small Python Projects/project2_Birthday_Paradox.py" beforeDir="false" afterPath="$PROJECT_DIR$/The Big Book of Small Python Projects/project2_Birthday_Paradox.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +59,7 @@
       <recent name="G:\Programmpractice work\practice-work\The Big Book of Small Python Projects" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.project2_Birthday_Paradox">
+  <component name="RunManager" selected="Python.project3_bitmap">
     <configuration name="Python Console (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice-work" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -105,28 +104,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="project1_Bagels" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="practice-work" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="G:\Programmpractice work\practice-work\The Big Book of Small Python Projects\project1_Bagels.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="project2_Birthday_Paradox" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice-work" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -141,6 +118,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Big Book of Small Python Projects/project2_Birthday_Paradox.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="project3_bitmap" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="practice-work" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Big Book of Small Python Projects" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Big Book of Small Python Projects/project3_bitmap.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -173,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.project3_bitmap" />
         <item itemvalue="Python.project2_Birthday_Paradox" />
         <item itemvalue="Python.sddg" />
         <item itemvalue="Python.Python Console (1)" />
         <item itemvalue="Python.Python Console" />
-        <item itemvalue="Python.project1_Bagels" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +195,7 @@
       <workItem from="1656702981837" duration="1293000" />
       <workItem from="1658257368374" duration="22896000" />
       <workItem from="1658677581979" duration="1025000" />
-      <workItem from="1659123339347" duration="26714000" />
+      <workItem from="1659123339347" duration="29733000" />
     </task>
     <task id="LOCAL-00001" summary="done">
       <created>1653256708240</created>
@@ -282,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659386037193</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="a little bit faster(236 sec vs 315 sec).">
+      <created>1659391478420</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1659391478420</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +297,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="done" />
     <MESSAGE value="third practic" />
-    <option name="LAST_COMMIT_MESSAGE" value="third practic" />
+    <MESSAGE value="a little bit faster(236 sec vs 315 sec)." />
+    <option name="LAST_COMMIT_MESSAGE" value="a little bit faster(236 sec vs 315 sec)." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/practice_work$image_site_downloader.coverage" NAME="image_site_downloader Coverage Results" MODIFIED="1659340441070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
@@ -300,13 +307,14 @@
     <SUITE FILE_PATH="coverage/practice_work$Python_Console__1_.coverage" NAME="Python Console (1) Coverage Results" MODIFIED="1659380892608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/practice_work$searchcomments.coverage" NAME="com_rating_joyreactor Coverage Results" MODIFIED="1658271712694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
     <SUITE FILE_PATH="coverage/practice_work$selenium_learning.coverage" NAME="selenium_learning Coverage Results" MODIFIED="1659124564544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
+    <SUITE FILE_PATH="coverage/practice_work$project3_bitmap.coverage" NAME="project3_bitmap Coverage Results" MODIFIED="1659440112839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
     <SUITE FILE_PATH="coverage/practice_work$Regex_Version_of_the_strip___Method.coverage" NAME="Regex Version of the strip() Method Coverage Results" MODIFIED="1653260303797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/re" />
     <SUITE FILE_PATH="coverage/practice_work$com_rating_joyreactor__1_.coverage" NAME="com_rating_joyreactor (1) Coverage Results" MODIFIED="1658303405331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
     <SUITE FILE_PATH="coverage/practice_work$Learning_Module.coverage" NAME="Learning Module Coverage Results" MODIFIED="1656703590868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
     <SUITE FILE_PATH="coverage/practice_work$Downloading_All_XKCD_Comics.coverage" NAME="Downloading All XKCD Comics Coverage Results" MODIFIED="1658356817288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
     <SUITE FILE_PATH="coverage/practice_work$Bagels.coverage" NAME="project1_Bagels Coverage Results" MODIFIED="1659341863653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/practice_work$Python_Console.coverage" NAME="Python Console Coverage Results" MODIFIED="1659380881337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/practice_work$project2_Birthday_Paradox.coverage" NAME="project2_Birthday_Paradox Coverage Results" MODIFIED="1659391151197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
+    <SUITE FILE_PATH="coverage/practice_work$project2_Birthday_Paradox.coverage" NAME="project2_Birthday_Paradox Coverage Results" MODIFIED="1659391186550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
     <SUITE FILE_PATH="coverage/practice_work$sddg.coverage" NAME="sddg Coverage Results" MODIFIED="1659388244564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
   </component>
 </project>
