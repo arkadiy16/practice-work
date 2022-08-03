@@ -105,13 +105,13 @@ def bet_validation(num, money=5000):
 
 
 # Player turn.
-def p_turn(p_hand, deck):
+def p_turn(p_hand, deck, bet, money):
     choice = ''
     while True and point_count(p_hand[1:]) < 21:
-        if choice == 'h':
-            choice =  pyip.inputChoice(['h', 's'])
+        if choice == 'h' or bet * 2 > money:
+            choice = pyip.inputChoice(['h', 's'])
         else:
-            choice =  pyip.inputChoice(['h', 's', 'd'])
+            choice = pyip.inputChoice(['h', 's', 'd'])
         if choice == 's':
             break
         elif choice == 'h':
@@ -120,8 +120,9 @@ def p_turn(p_hand, deck):
             p_hand.append(hit_card)
         else:
             p_hand.append(deck.pop())
+            bet *= 2
             break
-    return p_hand, deck
+    return p_hand, deck, bet
 
 
 # BJ game.
@@ -132,7 +133,7 @@ def bj():
         while True:
             print(f'You have: ${money}')
             print(f'How much do you bet? (1-{money}, or QUIT)')
-            bet =  pyip.inputCustom(bet_validation)
+            bet = pyip.inputCustom(bet_validation)
             if not bet:
                 break
             p_hand = ['p', deck.pop(), deck.pop()]
@@ -157,7 +158,7 @@ def bj():
             card_print(a_hand)
             face_down_card[2] = 'up'
             print('(H)it, (S)tand, (D)ouble down')
-            p_hand, deck = p_turn(p_hand, deck)
+            p_hand, deck, bet = p_turn(p_hand, deck, bet, money)
             if point_count(p_hand[1:]) > 21:
                 money -= bet
                 card_print(p_hand)
