@@ -106,8 +106,12 @@ def bet_validation(num, money=5000):
 
 # Player turn.
 def p_turn(p_hand, deck):
+    choice = ''
     while True and point_count(p_hand[1:]) < 21:
-        choice =  pyip.inputChoice(['h', 's', 'd'])
+        if choice == 'h':
+            choice =  pyip.inputChoice(['h', 's'])
+        else:
+            choice =  pyip.inputChoice(['h', 's', 'd'])
         if choice == 's':
             break
         elif choice == 'h':

@@ -61,7 +61,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.project4_blackjeck">
-    <configuration name="Python Console (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="blackjack" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice-work" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -69,12 +69,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../BBPR" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="/Python Console" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../BBPR/blackjack.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -174,10 +174,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.project4_blackjeck" />
+        <item itemvalue="Python.blackjack" />
         <item itemvalue="Python.project3_bitmap" />
         <item itemvalue="Python.project2_Birthday_Paradox" />
         <item itemvalue="Python.sddg" />
-        <item itemvalue="Python.Python Console (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +196,7 @@
       <workItem from="1656702981837" duration="1293000" />
       <workItem from="1658257368374" duration="22896000" />
       <workItem from="1658677581979" duration="1025000" />
-      <workItem from="1659123339347" duration="50601000" />
+      <workItem from="1659123339347" duration="50909000" />
     </task>
     <task id="LOCAL-00001" summary="done">
       <created>1653256708240</created>
@@ -331,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659551624626</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Done">
+      <created>1659557890004</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1659557890004</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +354,8 @@
     <MESSAGE value="start working on bj with ASCII cards.&#10;function to print ASCII cards done." />
     <MESSAGE value="function to create a deck and bet input validation done." />
     <MESSAGE value="function to count points in hand done." />
-    <option name="LAST_COMMIT_MESSAGE" value="function to count points in hand done." />
+    <MESSAGE value="Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/practice_work$image_site_downloader.coverage" NAME="image_site_downloader Coverage Results" MODIFIED="1659340441070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
@@ -365,6 +373,7 @@
     <SUITE FILE_PATH="coverage/practice_work$Python_Console.coverage" NAME="Python Console Coverage Results" MODIFIED="1659380881337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/practice_work$project2_Birthday_Paradox.coverage" NAME="project2_Birthday_Paradox Coverage Results" MODIFIED="1659391186550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
     <SUITE FILE_PATH="coverage/practice_work$sddg.coverage" NAME="sddg Coverage Results" MODIFIED="1659388244564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
-    <SUITE FILE_PATH="coverage/practice_work$project4_blackjeck.coverage" NAME="project4_blackjeck Coverage Results" MODIFIED="1659557860308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
+    <SUITE FILE_PATH="coverage/practice_work$blackjack.coverage" NAME="blackjack Coverage Results" MODIFIED="1659557986592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../BBPR" />
+    <SUITE FILE_PATH="coverage/practice_work$project4_blackjeck.coverage" NAME="project4_blackjeck Coverage Results" MODIFIED="1659558160241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
   </component>
 </project>
