@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d46ffc32-0e73-483a-b3e8-de38d7965a49" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/The Big Book of Small Python Projects/project4_blackjeck.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/The Big Book of Small Python Projects/project3_bitmap.py" beforeDir="false" afterPath="$PROJECT_DIR$/The Big Book of Small Python Projects/project3_bitmap.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +44,7 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -59,30 +60,8 @@
       <recent name="G:\Programmpractice work\practice-work\The Big Book of Small Python Projects" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.project3_bitmap">
+  <component name="RunManager" selected="Python.project4_blackjeck">
     <configuration name="Python Console (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="practice-work" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="/Python Console" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python Console" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice-work" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -148,6 +127,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="project4_blackjeck" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="practice-work" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Big Book of Small Python Projects" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Big Book of Small Python Projects/project4_blackjeck.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="sddg" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice-work" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -172,11 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.project4_blackjeck" />
         <item itemvalue="Python.project3_bitmap" />
         <item itemvalue="Python.project2_Birthday_Paradox" />
         <item itemvalue="Python.sddg" />
         <item itemvalue="Python.Python Console (1)" />
-        <item itemvalue="Python.Python Console" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +196,7 @@
       <workItem from="1656702981837" duration="1293000" />
       <workItem from="1658257368374" duration="22896000" />
       <workItem from="1658677581979" duration="1025000" />
-      <workItem from="1659123339347" duration="33455000" />
+      <workItem from="1659123339347" duration="38142000" />
     </task>
     <task id="LOCAL-00001" summary="done">
       <created>1653256708240</created>
@@ -295,18 +296,34 @@
       <option name="project" value="LOCAL" />
       <updated>1659440130505</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="new project">
+      <created>1659448513520</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1659448513520</updated>
+    </task>
+    <task id="LOCAL-00016" summary="txt file for proj2">
+      <created>1659448623271</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1659448623271</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="done" />
     <MESSAGE value="third practic" />
     <MESSAGE value="a little bit faster(236 sec vs 315 sec)." />
     <MESSAGE value="new project" />
-    <option name="LAST_COMMIT_MESSAGE" value="new project" />
+    <MESSAGE value="txt file for proj2" />
+    <option name="LAST_COMMIT_MESSAGE" value="txt file for proj2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/practice_work$image_site_downloader.coverage" NAME="image_site_downloader Coverage Results" MODIFIED="1659340441070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
@@ -324,5 +341,6 @@
     <SUITE FILE_PATH="coverage/practice_work$Python_Console.coverage" NAME="Python Console Coverage Results" MODIFIED="1659380881337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/practice_work$project2_Birthday_Paradox.coverage" NAME="project2_Birthday_Paradox Coverage Results" MODIFIED="1659391186550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
     <SUITE FILE_PATH="coverage/practice_work$sddg.coverage" NAME="sddg Coverage Results" MODIFIED="1659388244564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
+    <SUITE FILE_PATH="coverage/practice_work$project4_blackjeck.coverage" NAME="project4_blackjeck Coverage Results" MODIFIED="1659536095082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
   </component>
 </project>
