@@ -2,15 +2,17 @@ import random
 import pyinputplus as pyip
 
 
-# cards: [[suit, rank, face], ...]
-# Card painting with ASCII.
+# cards: [['p'/'a'][suit, rank, face], ...]
+# Hand painting with ASCII.
 def card_print(cards):
+    # Printing player's points.
     if cards[0] == 'p':
         player = 'Player'
     else:
         player = 'AI'
-    print(f'{player}\'s hand:')
     cards = cards[1:]
+    print(f'{player}\'s hand: {point_count(cards)}')
+    # Printing cards with ASCII.
     for i in range(4):
         if i == 0:
             print(' ___  ' * len(cards))
@@ -56,16 +58,24 @@ def deck_create(decks_amount=4):
 
 
 # Counting points in hand.
-def p_count(hand):
-    pass
-
-
-# Player's hand.
-def hand():
-    hand = []
-
-    pass
-
+def point_count(hand):
+    points = 0
+    ace_count = 0
+    for _, rank, face in hand:
+        if face == 'down':
+            return '???'
+        point = ranks.index(rank) + 1
+        if point > 10:
+            point = 10
+        elif point == 1:
+            point = 11
+            ace_count += 1
+        points += point
+    if points > 21:
+        while ace_count and points > 21:
+            points -= 10
+            ace_count -= 1
+    return points
 
 # AI.
 def ai():
