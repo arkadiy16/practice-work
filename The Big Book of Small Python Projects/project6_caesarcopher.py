@@ -2,7 +2,6 @@
 # It encrypts letters by shifting them over
 # by a certain number of places in the alphabet.
 # Same to decrypt but shift letters in opposite direction.
-# Program have 2 main functions for encrypt and decrypt given message.
 
 import string, pyperclip
 import pyinputplus as pyip
