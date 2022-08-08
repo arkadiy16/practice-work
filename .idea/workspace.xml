@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d46ffc32-0e73-483a-b3e8-de38d7965a49" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/The Big Book of Small Python Projects/calendar_2029_12.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/The Big Book of Small Python Projects/project7.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/The Big Book of Small Python Projects/project8_calendarmaker.py" beforeDir="false" afterPath="$PROJECT_DIR$/The Big Book of Small Python Projects/project8_calendarmaker.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +196,7 @@
       <workItem from="1656702981837" duration="1293000" />
       <workItem from="1658257368374" duration="22896000" />
       <workItem from="1658677581979" duration="1025000" />
-      <workItem from="1659123339347" duration="72607000" />
+      <workItem from="1659123339347" duration="73446000" />
     </task>
     <task id="LOCAL-00001" summary="done">
       <created>1653256708240</created>
@@ -381,7 +380,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659899826280</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="project8 Done.">
+      <created>1659987562161</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1659987562161</updated>
+    </task>
+    <task id="LOCAL-00028" summary="project renamed">
+      <created>1659987622509</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1659987622509</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,12 +417,14 @@
     <MESSAGE value="Now counter work right, logo can start move in &quot;any&quot; direction" />
     <MESSAGE value="project6 Done." />
     <MESSAGE value="project7 Done." />
-    <option name="LAST_COMMIT_MESSAGE" value="project7 Done." />
+    <MESSAGE value="project8 Done." />
+    <MESSAGE value="project renamed" />
+    <option name="LAST_COMMIT_MESSAGE" value="project renamed" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/practice_work$image_site_downloader.coverage" NAME="image_site_downloader Coverage Results" MODIFIED="1659340441070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
     <SUITE FILE_PATH="coverage/practice_work$searchpypi.coverage" NAME="searchpypi Coverage Results" MODIFIED="1658257648932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
-    <SUITE FILE_PATH="coverage/practice_work$project7.coverage" NAME="project7 Coverage Results" MODIFIED="1659987148399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
+    <SUITE FILE_PATH="coverage/practice_work$project7.coverage" NAME="project8_calendarmaker Coverage Results" MODIFIED="1659987988682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
     <SUITE FILE_PATH="coverage/practice_work$Strong_Password_Detection.coverage" NAME="Strong Password Detection Coverage Results" MODIFIED="1653257801190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/re" />
     <SUITE FILE_PATH="coverage/practice_work$Python_Console__1_.coverage" NAME="Python Console (1) Coverage Results" MODIFIED="1659380892608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/practice_work$project6_caesarcopher.coverage" NAME="project6_caesarcopher Coverage Results" MODIFIED="1659899442622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />

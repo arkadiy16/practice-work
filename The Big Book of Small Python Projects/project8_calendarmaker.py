@@ -15,7 +15,7 @@ def calend(year, month):
     # List with dates, first date is monday before the start of the month if 1st <month> is not monday.
     dates = list(c.itermonthdates(year, month))
     # Leave only days in string format, if <day> < 10 add <space> before it.
-    dates = list(map(lambda x: ' ' + str(x.day) if x.day < 10 else str(x.day), dates))
+    dates = list(map(lambda x: str(x.day).rjust(2), dates))
     # Loop for every week.
     for row in range(len(dates) // 7):
         sat = 7 * (row + 1)
