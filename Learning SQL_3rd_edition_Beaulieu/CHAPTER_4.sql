@@ -16,3 +16,11 @@ SELECT *
  WHERE amount = 1.98
     OR amount = 7.98
     OR amount = 9.98;
+
+Exercise 4-4
+Construct a query that finds all customers whose last name contains an A in the sec‐
+ond position and a W anywhere after the A.
+SELECT * 
+  FROM customer
+ WHERE last_name LIKE '_A%W%';
+ 
