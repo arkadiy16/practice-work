@@ -58,6 +58,23 @@ def deviation(results, avrg):
     return (sum([(x - avrg) ** 2 for x in results]) / (len(results) - 1)) ** (1 / 2)
     pass
 
+# Function for rounding.
+def rounding(avrg, conf_limits):
+    if conf_limits < 1:
+        rank = 1
+        for r, dec in enumerate(str(conf_limits)[2:]):
+            if int(dec) >= 3:
+                r += 1
+                conf_limits = f'{conf_limits:.rf}'
+                break
+            elif dec == '0':
+                continue
+            else:
+                r += 2
+                conf_limits = f'{conf_limits:.rf}'
+                break
+
+    pass
 
 def main(results, prob):
     g1_flag, g2_flag = True, True
@@ -72,6 +89,6 @@ def main(results, prob):
     avrg_deviat = deviat / len(results) ** (1 / 2)
     conf_limits = t_distibution_dict[len(results)][prob] * avrg_deviat
 
-    print(avrg, '+- ', conf_limits)
+    print(f'{avrg}+-{conf_limits}')
 
 main([7.47, 7.5, 7.49, 7.58, 7.48], 0)
