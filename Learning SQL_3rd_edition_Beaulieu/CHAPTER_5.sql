@@ -22,3 +22,27 @@ SELECT c.first_name, c.last_name, a.address, ct.city
        INNER JOIN city AS ct
        ON a.city_id = ct.city_id
  WHERE a.district = 'California';
+ 
+# Exercise 5-2
+# Write a query that returns the title of every film in which an actor with the first name
+# JOHN appeared.
+SELECT f.title
+  FROM film as f
+       INNER JOIN film_actor as fa
+       ON f.film_id = fa.film_id
+       INNER JOIN actor AS a
+       ON fa.actor_id = a.actor_id
+ WHERE a.first_name = 'JOHN';
+# +---------------------------+
+# | title                     |
+# +---------------------------+
+# | ALLEY EVOLUTION           |
+# | BEVERLY OUTLAW            |
+# | CANDLES GRAPES            |
+# | CLEOPATRA DEVIL           |
+# | COLOR PHILADELPHIA        |
+#  ...........................
+# | SATISFACTION CONFIDENTIAL |
+# | SONG HEDWIG               |
+# +---------------------------+
+# 29 rows in set (0.00 sec) 
