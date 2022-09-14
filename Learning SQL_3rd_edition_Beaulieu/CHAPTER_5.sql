@@ -46,3 +46,23 @@ SELECT f.title
 # | SONG HEDWIG               |
 # +---------------------------+
 # 29 rows in set (0.00 sec) 
+
+
+# Exercise 5-3
+# Construct a query that returns all addresses that are in the same city. You will need to
+# join the address table to itself, and each row should include two different addresses.
+SELECT a1.address, a2.address
+  FROM address AS a1
+       INNER JOIN address AS a2
+       ON a1.city_id = a2.city_id
+ WHERE a1.address != a2.address
+ GROUP BY a1.city_id;
+# +--------------------+----------------------+
+# | address            | address              |
+# +--------------------+----------------------+
+# | 47 MySakila Drive  | 23 Workhaven Lane    |
+# | 28 MySQL Boulevard | 1411 Lillydale Drive |
+# | 1497 Yuzhou Drive  | 548 Uruapan Street   |
+# | 587 Benguela Manor | 43 Vilnius Manor     |
+# +--------------------+----------------------+
+# 4 rows in set (0.00 sec)
