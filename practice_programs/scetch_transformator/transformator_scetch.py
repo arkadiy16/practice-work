@@ -3,6 +3,7 @@ import turtle
 s = turtle.getscreen()
 t = turtle.Turtle()
 
+
 def rect(width, lenght):
     for forw in 2 * (width, lenght):
         t.fd(forw)
@@ -18,15 +19,7 @@ def coil(c_l, a1, a12, a2, a_, l):
     t.pendown()
     rect(a1 + a12 + a2, l)
     t.fd(a2)
-    t.rt(90)
-    t.fd(l)
-    t.rt(-90)
-    t.fd(a12)
-    t.rt(-90)
-    t.fd(l)
-    pass
-
-
+    rect(a12, l)
 
 
 def main():
@@ -43,7 +36,7 @@ def main():
     t.penup()
     t.goto(-c - (hi - d / 2), hc / 2 + hi)
     t.pendown()
-    rect(2 * c + 2 * (hi - d / 2), hc + 2 * hi)
+    rect(2 * c + 2 * (hi - d / 2), hc + 2 * hi) # outer rect
 
     t.penup()
     tp = t.pos()
@@ -55,9 +48,9 @@ def main():
     t.penup()
     t.goto(c - d / 2, - hc / 2)
     t.pendown()
-    t.rt(90)
     coil(-hc, -a1, -a12, -a2, -(d1 - d) / 2, -l)
 
     input()
+
 
 main()
