@@ -18,7 +18,7 @@ def calculate(u2, i2, z12, b12):
     s12_l = 3 * i12 ** 2 * z12
     return ic12_e, i12, u1, ic12_s, s12_l
 
-def vect_diagr():
+def gui():
     pass
 
 print(calculate(5890, complex(25, 11), complex(6.23, 2.93), 1))
