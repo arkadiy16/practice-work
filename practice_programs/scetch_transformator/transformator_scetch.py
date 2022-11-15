@@ -10,7 +10,6 @@ s = turtle.getscreen()
 t = turtle.Turtle()
 t.hideturtle()
 t.speed(0)
-t.clear()
 
 def rect(width, lenght):
     for forw in 2 * (width, lenght):
