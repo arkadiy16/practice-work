@@ -8,7 +8,9 @@ logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s - 
 
 s = turtle.getscreen()
 t = turtle.Turtle()
-
+t.hideturtle()
+t.speed(0)
+t.clear()
 
 def rect(width, lenght):
     for forw in 2 * (width, lenght):
@@ -30,17 +32,15 @@ def coil(c_l, a1, a12, a2, a_, l):
 
 def scetch(*args):
     try:
-        logging.debug('Some debugging details.')
-        d1_s = float(d1_entry.get())  # 98
-        logging.debug('after d1')
-        a1_s = float(a1_entry.get())  # 27.5
-        a2_s = float(a12_entry.get())  # 15
-        a12_s = float(a2_entry.get())  # 10
-        l_s = float(l_entry.get())  # 282
-        d_s = float(d_entry.get())  # 90
-        hc_s = float(hc_entry.get())  # 320
-        hi_s = float(hi_entry.get())  # 85
-        c_s = float(c_entry.get())  # 213
+        d1_s =98 #float(d1_entry.get())  #
+        a1_s =27.5 #float(a1_entry.get())  # 27.5
+        a2_s =15# float(a12_entry.get())  # 15
+        a12_s =10# float(a2_entry.get())  # 10
+        l_s = 282#float(l_entry.get())  # 282
+        d_s = 90#float(d_entry.get())  # 90
+        hc_s = 320#float(hc_entry.get())  # 320
+        hi_s = 85#float(hi_entry.get())  # 85
+        c_s = 213#float(c_entry.get())  # 213
     except ValueError:
         return
 
@@ -74,26 +74,26 @@ d1, a1, a12, a2, l, d, hc, hi, c = (StringVar(), StringVar(), StringVar(), Strin
                                     StringVar(), StringVar(), StringVar())
 
 # Cells for entry variables.
-d1_entry = ttk.Entry(mainframe, width=5, textvariable=d1)
-a1_entry = ttk.Entry(mainframe, width=5, textvariable=a1)
-a12_entry = ttk.Entry(mainframe, width=5, textvariable=a12)
-a2_entry = ttk.Entry(mainframe, width=5, textvariable=a2)
-l_entry = ttk.Entry(mainframe, width=5, textvariable=l)
-d_entry = ttk.Entry(mainframe, width=5, textvariable=d)
-hc_entry = ttk.Entry(mainframe, width=5, textvariable=hc)
-hi_entry = ttk.Entry(mainframe, width=5, textvariable=hi)
-c_entry = ttk.Entry(mainframe, width=5, textvariable=c)
+d1_entry = ttk.Entry(mainframe, width=8, textvariable=d1)
+a1_entry = ttk.Entry(mainframe, width=8, textvariable=a1)
+a12_entry = ttk.Entry(mainframe, width=8, textvariable=a12)
+a2_entry = ttk.Entry(mainframe, width=8, textvariable=a2)
+l_entry = ttk.Entry(mainframe, width=8, textvariable=l)
+d_entry = ttk.Entry(mainframe, width=8, textvariable=d)
+hc_entry = ttk.Entry(mainframe, width=8, textvariable=hc)
+hi_entry = ttk.Entry(mainframe, width=8, textvariable=hi)
+c_entry = ttk.Entry(mainframe, width=8, textvariable=c)
 
 # Variables cells arrangement.
-d1_entry.grid(column=0, row=1, sticky=W)
-a1_entry.grid(column=1, row=1, sticky=W)
-a12_entry.grid(column=2, row=1, sticky=W)
-a2_entry.grid(column=3, row=1, sticky=W)
-l_entry.grid(column=4, row=1, sticky=W)
-d_entry.grid(column=5, row=1, sticky=W)
-hc_entry.grid(column=6, row=1, sticky=W)
-hi_entry.grid(column=7, row=1, sticky=W)
-c_entry.grid(column=8, row=1, sticky=W)
+d1_entry.grid(column=0, row=1, sticky=W+E)
+a1_entry.grid(column=1, row=1, sticky=W+E)
+a12_entry.grid(column=2, row=1, sticky=W+E)
+a2_entry.grid(column=3, row=1, sticky=W+E)
+l_entry.grid(column=4, row=1, sticky=W+E)
+d_entry.grid(column=5, row=1, sticky=W+E)
+hc_entry.grid(column=6, row=1, sticky=W+E)
+hi_entry.grid(column=7, row=1, sticky=W+E)
+c_entry.grid(column=8, row=1, sticky=W+E)
 
 # Cells for variables labels.
 ttk.Label(mainframe, text='d1, mm').grid(column=0, row=0, sticky=W)
