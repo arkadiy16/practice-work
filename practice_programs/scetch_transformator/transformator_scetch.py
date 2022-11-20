@@ -2,6 +2,7 @@ import turtle
 import logging
 from tkinter import *
 from tkinter import ttk
+from PIL import Image
 
 
 logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s -  %(message)s')
@@ -60,6 +61,12 @@ def scetch(*args):
     t.pendown()
     coil(-hc_s, -a1_s, -a12_s, -a2_s, -(d1_s - d_s) / 2, -l_s)
 
+    screen = turtle.getscreen()
+    screen.setup(1000, 1000)
+    screen.getcanvas().postscript(file='12.eps', width=1000, height=1000)
+    with Image.open('12.png') as f:
+        screen.getcanvas().convert('png').save('121.png')
+
 
 root = Tk()
 root.title('Transformator scetch')
@@ -109,5 +116,7 @@ ttk.Button(mainframe, text='Paint', command=scetch).grid(column=8, row=3, sticky
 
 d1_entry.focus()  # Focus cursor on field d1.
 root.bind('<Return>', scetch)
+
+
 
 root.mainloop()
