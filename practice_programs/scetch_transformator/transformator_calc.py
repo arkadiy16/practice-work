@@ -1,4 +1,5 @@
 import openpyxl
+import math
 
 
 def get_data(sheet, row):
@@ -54,8 +55,11 @@ def step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, r=7650
     for n in (0.5, 0.7, 0.8, 0.9, 1, 1.1):
         tabl_data = step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s)
         if n == 1:
-            r_sheet['K2'] = tabl_data[0]
-            r_sheet['K3'] = tabl_data[-1]
+            r_sheet['K1'] = 'Результаты вычислений'
+            r_sheet['K2'] = f'{tabl_data[0]} W'
+            r_sheet['K3'] = f'{tabl_data[-2]} %'
+            bc = tabl_data[-1]
+            px = tabl_data[0]
         r_sheet[f'A{row_t2}'] = n
         r_sheet[f'B{row_t2}'] = round(n * u1fn, 2)
         r_sheet[f'C{row_t2}'] = tabl_data[0]
@@ -65,6 +69,11 @@ def step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, r=7650
         r_sheet[f'G{row_t2}'] = tabl_data[4]
         r_sheet[f'H{row_t2}'] = tabl_data[5]
         row_t2 += 1
+    bc40 = round(u1fn * 10 ** 4 / (4.44 * 40 * w1 * pc), 3)
+    bc60 = round(u1fn * 10 ** 4 / (4.44 * 60 * w1 * pc), 3)
+    px40 = round(px * (bc40 / bc) ** 2 * (40 / 50) ** 1.5, 2)
+    px60 = round(px * (bc60 / bc) ** 2 * (60 / 50) ** 1.5, 2)
+    print(f'px40/60: {px40}, {px60}')
 
 
 def step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s):
@@ -104,12 +113,106 @@ def step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s):
         print(f'cos: {cosp0}, sin: {sinp0}')
         print(f'z,r,x: {z0}, {r0}, {x0}')
 
-    return px, qx, i0a, i0p, i0, cosp0, i_0
+    return px, qx, i0a, i0p, i0, cosp0, i_0, bc
 
 
-def step_4():
+def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_sheet):
     # Short circuit experience.
-    pass
+    c = 3
+    if s <= 100:
+        kdob = 1.03
+    elif 160 <= s <= 630:
+        kdob = 1.06
+    else:
+        kdob = 1.12
+    d_avg1 = round(d1 + 2 * a1, 2)
+    d_avg2 = round(d_avg1 + 2 * a12 + a2 / 2, 2)
+    j1 = i1n / sp1
+    j2 = i2n / sp2
+    if al:
+        g01 = 8.47 * c * d_avg1 * w1 * sp1 * 10 ** (-5)
+        posn1 = 12.75 * g01 * j1 ** 2
+
+        g02 = 8.47 * c * d_avg2 * w2 * sp2 * 10 ** (-5)
+        posn2 = 12.75 * g02 * j2 ** 2
+    else:
+        g01 = 28 * c * d_avg1 * w1 * sp1 * 10 ** (-5)
+        posn1 = 2.4 * g01 * j1 ** 2
+
+        g02 = 28 * c * d_avg2 * w2 * sp2 * 10 ** (-5)
+        posn2 = 2.4 * g02 * j2 ** 2
+
+    posn = posn1 + posn2
+    pk = posn * kdob
+    print(f'd_avg: {d_avg1}, {d_avg2}')
+    print(f'J: {round(j1, 2)}, {round(j2, 2)}')
+    print(f'G0: {round(g01, 2)}, {round(g02, 2)}')
+    print(f'Posni: {round(posn1, 2)}, {round(posn2, 2)}')
+    print(f'Posn: {round(posn, 2)}')
+    print(f'Kdob: {kdob}')
+    print(f'Pk: {round(pk, 2)}')
+
+    usv = u1fn / w1
+    ss = s / c
+    d12 = d1 + 2 * a1 + a12
+    b = 3.1415 * d12 / l
+    ap = a12 + (a1 + a2) / 3
+    kp = 0.95
+
+    uap = pk / (10 * s)
+    upp = 7.92 * f * ss * b * ap * kp / (usv ** 2 * 10 ** 3)
+    ukp = (uap ** 2 + upp ** 2) ** (1 / 2)
+
+    print(f'up: {round(uap, 2)}, {round(upp, 2)}, {round(ukp, 2)}')
+    print(f'S\': {round(ss, 2)}')
+    print(f'b: {round(b, 2)}')
+    print(f'd12: {d12}')
+    print(f'ap: {round(ap, 2)}')
+    print(f'kp: {kp}')
+
+    uk = u1fn * ukp / 100
+    uka = u1fn * uap / 100
+    ukp = u1fn * upp / 100
+    print(f'Uk: {round(uk, 2)}, {round(uka, 2)}, {round(ukp, 2)}')
+
+    zk = uk / i1n
+    rk = uka / i1n
+    xk = ukp / i1n
+    cospk = uka / ukp
+    print(f'zk, rk, xk: {round(zk, 2)}, {round(rk, 2)}, {round(xk)}')
+    print(f'cospk: {round(cospk, 2)}')
+
+    r_sheet['K5'] = 'Результаты вычислений'
+    r_sheet['K6'] = f'{round(pk, 2)} W'
+    r_sheet['K7'] = f'{round(upp, 2)} %'
+
+    step_4_tabl1(uka, ukp, r_sheet)
+
+
+def step_4_tabl1(uka, ukp, r_sheet):
+    r_sheet['A9'] = 'φ_2'
+    r_sheet['B9'] = 'ΔU, V'
+    delt_u_max = 0
+    p2_max = 0
+    for ind, p2 in enumerate([-90, -60, -45, -30, 0, 30, 45, 60, 90]):
+        r_sheet[f'A{ind + 10}'] = p2
+        p2 = math.radians(p2)
+        delt_u = uka * math.cos(p2) + ukp * math.sin(p2)
+        if delt_u_max < delt_u:
+            delt_u_max = delt_u
+            p2_max = math.degrees(p2)
+
+        r_sheet[f'B{ind + 10}'] = round(delt_u, 2)
+    print(round(p2_max), round(delt_u_max, 2))
+    for p2 in range(round(p2_max) - 10, round(p2_max) + 10):
+        p2 = math.radians(p2)
+        delt_u = uka * math.cos(p2) + ukp * math.sin(p2)
+        if delt_u_max < delt_u:
+            delt_u_max = delt_u
+            p2_max = math.degrees(p2)
+    print(round(p2_max), round(delt_u_max, 2))
+
+
 
 
 def step_6():
@@ -135,12 +238,20 @@ def main():
         r_sheet = rb.active
         data = get_data(sheet, row)
         v, s, u1n, u2n, w1, w2, sp1, sp2, d1, a1, a2, a12, l, d, pc, pi, hc, hi, c, pk, px, uk, i0 = data
+
         u1fn, u2fn, i1n, i2n, k = step_1(u1n, u2n, s, w1, w2)
         step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory)
         r_sheet['J1'] = 'Контрольные данные'
         r_sheet['J2'] = f'Px = {px}W'
         r_sheet['J3'] = f'i0 = {i0}%'
-        r_sheet['K1'] = 'Результаты вычислений'
+        if 21 < v <= 31:
+            al = False
+        else:
+            al = True
+        r_sheet['J5'] = 'Контрольные данные'
+        r_sheet['J6'] = f'Pk = {pk}W'
+        r_sheet['J7'] = f'uk% = {uk}%'
+        step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_sheet)
 
         rb.save(f'result//var{row}.xlsx')
 
