@@ -187,6 +187,7 @@ def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_she
     r_sheet['K7'] = f'{round(upp, 2)} %'
 
     step_4_tabl1(uka, ukp, r_sheet)
+    step_4_tabl2(i2n, u1fn, r_sheet, uka, ukp)
 
 
 def step_4_tabl1(uka, ukp, r_sheet):
@@ -203,16 +204,35 @@ def step_4_tabl1(uka, ukp, r_sheet):
             p2_max = math.degrees(p2)
 
         r_sheet[f'B{ind + 10}'] = round(delt_u, 2)
-    print(round(p2_max), round(delt_u_max, 2))
     for p2 in range(round(p2_max) - 10, round(p2_max) + 10):
         p2 = math.radians(p2)
         delt_u = uka * math.cos(p2) + ukp * math.sin(p2)
         if delt_u_max < delt_u:
             delt_u_max = delt_u
             p2_max = math.degrees(p2)
-    print(round(p2_max), round(delt_u_max, 2))
+    print(f'phik: {round(p2_max)}\ndeltUmax: {round(delt_u_max, 2)}')
+    return p2_max
 
 
+def step_4_tabl2(i2n, u1fn, r_sheet, uka, ukp):
+    r_sheet['D9'] = 'К_нг'
+    r_sheet['E9'] = 'I2, A'
+    r_sheet['F9'] = 'ΔU,V\ncosφ_2=1'
+    r_sheet['G9'] = 'U2fn,V\ncosφ_2=1'
+    r_sheet['H9'] = 'ΔU,V\ncosφ_2=0.7'
+    r_sheet['I9'] = 'U2fn,V\ncosφ_2=0.7'
+    for ind, kng in enumerate([0, 0.2, 0.4, 0.6, 0.8, 1, 1.2]):
+        r_sheet[f'D{ind + 10}'] = kng
+        r_sheet[f'E{ind + 10}'] = round(i2n * kng, 2)
+        for cos_val in (1, 0.7):
+            delt_u = kng * (uka * cos_val + ukp * math.sin(math.acos(cos_val)))
+            u2f = (u1fn - delt_u) / 25
+            if cos_val == 1:
+                letter = ('F', 'G')
+            else:
+                letter = ('H', 'I')
+            r_sheet[f'{letter[0]}{ind + 10}'] = round(delt_u, 2)
+            r_sheet[f'{letter[1]}{ind + 10}'] = round(u2f, 2)
 
 
 def step_6():
