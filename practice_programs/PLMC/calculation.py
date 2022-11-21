@@ -21,4 +21,6 @@ def calculate(u2, i2, z12, b12):
 def gui():
     pass
 
-print(calculate(5890, complex(25, 11), complex(6.23, 2.93), 1))
+#print(calculate(5890, complex(25, 11), complex(6.23, 2.93), 1))
+a = b = d = 1
+print(a, b, d)

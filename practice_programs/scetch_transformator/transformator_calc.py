@@ -8,6 +8,59 @@ def get_data(sheet, row):
     return data
 
 
+def data_in_sheet(al, v, s, u1n, u2n, w1, w2, sp1, sp2, d1, a1, a2, a12, l, d, pc, pi,
+                  hc, hi, c, pk, px, uk, i0, u_sheet):
+    u_sheet.column_dimensions['B'].width = 20
+    u_sheet.column_dimensions['A'].width = 30
+    u_sheet['A1'] = f'Вариант: {v}'
+    u_sheet['A2'] = 'Исходные данные: '
+    u_sheet['A3'] = '1. Обмотка алюминиевая.' if al else 'Обмотка медная.'
+    u_sheet['A4'] = f'2. Мощность S = {s} кВА'
+    u_sheet['A4'] = '3. Схемы и группа соединений   Y/Y-0'
+    u_sheet.merge_cells('A4:B4')
+    u_sheet['A5'] = '4. Номинальные напряжения, В:'
+    u_sheet['A6'] = 'ВН:'
+    u_sheet['A7'] = 'НН:'
+    u_sheet['B6'] = f'U1ном = {u1n}'
+    u_sheet['B7'] = f'U2ном = {u2n}'
+    u_sheet['A8'] = '5. Обмотки:'
+    u_sheet['A9'] = 'Число витков:'
+    u_sheet['A10'] = u_sheet['A13'] = u_sheet['A17'] = 'ВН:'
+    u_sheet['A11'] = u_sheet['A14'] = u_sheet['A18'] = 'НН:'
+    u_sheet['B10'] = f'w1 = {w1}'
+    u_sheet['B11'] = f'w2 = {w2}'
+    u_sheet['A12'] = 'Сечение витков, мм2:'
+    u_sheet['B13'] = f'Sпр1 = {sp1} мм2'
+    u_sheet['B14'] = f'Sпр2 = {sp2} мм2'
+    u_sheet['A15'] = f'Внутренний диаметр обмотки НН D1 = {d1} см'
+    u_sheet.merge_cells('A15:B15')
+    u_sheet['A16'] = 'Радиальные размеры, см: '
+    u_sheet['B17'] = f'а1 = {a1} см'
+    u_sheet['B18'] = f'а2 = {a2} см'
+    u_sheet['A19'] = f'Канал между обмотками ВН и НН  а12 = {a12} см'
+    u_sheet.merge_cells('A19:B19')
+    u_sheet['A20'] = f'Высота обмотки, l1=l2,см		l1 = {l} см'
+    u_sheet.merge_cells('A20:B20')
+    u_sheet['A21'] = '6.	Магнитная система'
+    u_sheet['A22'] = f'Диаметр стержня d, см    	d = {d} см'
+    u_sheet['A23'] = 'Активное сечение, см2   '
+    u_sheet['A24'] = 'Стержень'
+    u_sheet['B24'] = f'Пc  = {pc} см2'
+    u_sheet['A25'] = 'Ярмо '
+    u_sheet['B25'] = f'Пя  = {pi} см2'
+    u_sheet['A26'] = 'Высота, см'
+    u_sheet['A27'] = 'Стержень'
+    u_sheet['B27'] = f'hc  = {hc} см'
+    u_sheet['A28'] = 'Ярмо '
+    u_sheet['B28'] = f'hя  = {hi} см'
+    u_sheet['A29'] = f'Расстояние между осями С = {c} см'
+    u_sheet['A29'] = '7.	Контрольные данные'
+    u_sheet['A30'] = f'Pк = {pk} Вт'
+    u_sheet['A31'] = f'uк = {uk}%'
+    u_sheet['B30'] = f'P_х={px}0 Вт'
+    u_sheet['B31'] = f'i0 = {i0}%'
+
+
 def get_accessory_table(sheet):
     accessory = [list(map(lambda x: float(x.value.replace(',', '.')), list(sheet.columns)[column])) for column in
                  range(0, 4)]
@@ -18,7 +71,8 @@ def nearest_value(items, value):
     return min(items, key=lambda x: abs(value - abs(x)))
 
 
-def step_1(u1n, u2n, s, w1, w2):
+def step_1(u1n, u2n, s, w1, w2, c_sheet):
+    c_sheet['A1'] = '1'
     u1fn = round(u1n / 3 ** (1 / 2), 2)
     u2fn = round(u2n / 3 ** (1 / 2), 2)
     print(f'ufn: {u1fn}, {u2fn}')
@@ -35,7 +89,7 @@ def step_2():
     pass
 
 
-def step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, r=7650):
+def step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, c_sheet, r=7650):
     # Idling experience.
     li = 2 * c + d
     gc = round(3 * hc * pc * r * 10 ** -6, 2)
@@ -57,7 +111,7 @@ def step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, r=7650
         if n == 1:
             r_sheet['K1'] = 'Результаты вычислений'
             r_sheet['K2'] = f'{tabl_data[0]} W'
-            r_sheet['K3'] = f'{tabl_data[-2]} %'
+            r_sheet['K3'] = f'{tabl_data[-5]} %'
             bc = tabl_data[-4]
             px = tabl_data[0]
             r0 = tabl_data[-2]
@@ -119,7 +173,7 @@ def step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s):
     return px, qx, i0a, i0p, i0, cosp0, i_0, bc, z0, r0, x0
 
 
-def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_sheet):
+def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_sheet, c_sheet):
     # Short circuit experience.
     c = 3
     if s <= 100:
@@ -222,6 +276,10 @@ def step_4_tabl1(uka, ukp, r_sheet):
 def step_4_tabl2(i2n, u1fn, r_sheet, uka, ukp):
     r_sheet['D9'] = 'К_нг'
     r_sheet['E9'] = 'I2, A'
+    r_sheet.column_dimensions['F'].width = 14
+    r_sheet.column_dimensions['G'].width = 16
+    r_sheet.column_dimensions['H'].width = 17
+    r_sheet.column_dimensions['I'].width = 17
     r_sheet['F9'] = 'ΔU,V\ncosφ_2=1'
     r_sheet['G9'] = 'U2fn,V\ncosφ_2=1'
     r_sheet['H9'] = 'ΔU,V\ncosφ_2=0.7'
@@ -240,7 +298,7 @@ def step_4_tabl2(i2n, u1fn, r_sheet, uka, ukp):
             r_sheet[f'{letter[1]}{ind + 10}'] = round(u2f, 2)
 
 
-def step_5(u1fn, i1n, i2n, p2_max, delt_u_max, rk, xk, r0, x0):
+def step_5(u1fn, i1n, i2n, p2_max, delt_u_max, rk, xk, r0, x0, c_sheet):
     p2_max = math.radians(p2_max)
     r1 = rk / 2
     x1 = xk / 2
@@ -263,13 +321,15 @@ def step_5(u1fn, i1n, i2n, p2_max, delt_u_max, rk, xk, r0, x0):
     print(f'u1: {round(u1.real, 2)} + j{round(u1.imag, 2)}')
 
 
-def step_6(s, px, pk, r_sheet):
+def step_6(s, px, pk, r_sheet, c_sheet):
     # KPD.
     px *= 1e-3
     pk *= 1e-3
     r_sheet['K9'] = 'Snom,kW'
     r_sheet['L9'] = 'η\ncosφ_2=1'
     r_sheet['M9'] = 'η\ncosφ_2=0.7'
+    r_sheet.column_dimensions['L'].width = 14
+    r_sheet.column_dimensions['M'].width = 16
     for ind, kng in enumerate([0, 0.2, 0.4, 0.6, 0.8, 1, 1.2]):
         r_sheet[f'K{ind + 10}'] = s * kng
         for cos_val in (1, 0.7):
@@ -285,7 +345,7 @@ def step_6(s, px, pk, r_sheet):
     print(f'kpd_max: {round(kpd_max, 3)}')
 
 
-def step_7(i1n, uk, rk, xk):
+def step_7(i1n, uk, rk, xk, c_sheet):
     # Knocking current.
     ikust = i1n * 100 / uk
     kud = 1 + math.exp(-(math.pi * rk / xk))
@@ -293,6 +353,7 @@ def step_7(i1n, uk, rk, xk):
     print(f'ikust: {round(ikust, 2)}')
     print(f'kud: {round(kud, 3)}')
     print(f'ikm: {round(ikm, 2)}')
+
 
 def main():
     # get data from excel sheet.
@@ -302,32 +363,44 @@ def main():
     accessory = get_accessory_table(sheet_a)
     kd = 1.25
     f = 50
-    for row in range(1, 2):
+    for row in range(1, 44):
         rb = openpyxl.Workbook()
+        rb.create_sheet()
+        rb.create_sheet()
         r_sheet = rb.active
+        u_sheet = rb['Sheet1']
+        c_sheet = rb['Sheet2']
+
         data = get_data(sheet, row)
         v, s, u1n, u2n, w1, w2, sp1, sp2, d1, a1, a2, a12, l, d, pc, pi, hc, hi, c, pk, px, uk, i0 = data
 
-        u1fn, u2fn, i1n, i2n, k = step_1(u1n, u2n, s, w1, w2)
-        r0, x0 = step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory)
-        r_sheet['J1'] = 'Контрольные данные'
-        r_sheet['J2'] = f'Px = {px}W'
-        r_sheet['J3'] = f'i0 = {i0}%'
         if 21 < v <= 31:
             al = False
         else:
             al = True
+        data_in_sheet(al, v, s, u1n, u2n, w1, w2, sp1, sp2, d1, a1, a2, a12, l, d, pc, pi,
+                      hc, hi, c, pk, px, uk, i0, u_sheet)
+        u1fn, u2fn, i1n, i2n, k = step_1(u1n, u2n, s, w1, w2, c_sheet)
+
+        r0, x0 = step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, c_sheet)
+
+        r_sheet['J1'] = 'Контрольные данные'
+        r_sheet['J2'] = f'Px = {px}W'
+        r_sheet['J3'] = f'i0 = {i0}%'
+
+        r_sheet.column_dimensions['J'].width = 22
+        r_sheet.column_dimensions['K'].width = 24
         r_sheet['J5'] = 'Контрольные данные'
         r_sheet['J6'] = f'Pk = {pk}W'
         r_sheet['J7'] = f'uk% = {uk}%'
-        p2_max, delt_u_max, zk, rk, xk = step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_sheet)
+        p2_max, delt_u_max, zk, rk, xk = step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_sheet,
+                                                c_sheet)
 
-        step_5(u1fn, i1n, i2n, p2_max, delt_u_max, rk, xk, r0, x0)
+        step_5(u1fn, i1n, i2n, p2_max, delt_u_max, rk, xk, r0, x0, c_sheet)
 
-        step_6(s, px, pk, r_sheet)
+        step_6(s, px, pk, r_sheet, c_sheet)
 
-        step_7(i1n, uk, rk, xk)
-
+        step_7(i1n, uk, rk, xk, c_sheet)
         rb.save(f'result//var{row}.xlsx')
 
 
