@@ -73,14 +73,34 @@ def nearest_value(items, value):
 
 def step_1(u1n, u2n, s, w1, w2, c_sheet):
     c_sheet['A1'] = '1'
-    u1fn = round(u1n / 3 ** (1 / 2), 2)
-    u2fn = round(u2n / 3 ** (1 / 2), 2)
-    print(f'ufn: {u1fn}, {u2fn}')
-    i1n = round(s * 1000 / (3 ** (1 / 2) * u1n), 2)
-    i2n = round(s * 1000 / (3 ** (1 / 2) * u2n), 2)
-    print(f'in: {i1n}, {i2n}')
-    k = round(w1 / w2)
-    print(f'k: {k}')
+    u1fn = u1n / 3 ** (1 / 2)
+    u2fn = u2n / 3 ** (1 / 2)
+    c_sheet['A1'] = 'Фазные значения номинального напряжения (при соединении Y/Y)'
+    c_sheet.merge_cells('A1:G1')
+    c_sheet['A2'] = f'U_1фном=U_1ном/√3={u1n}/√3='
+    c_sheet['F2'] = f'{round(u1n, 2)} B'
+    c_sheet.merge_cells('A2:D2')
+    c_sheet['A3'] = f'U_2фном=U_2ном/√3={u2n}/√3='
+    c_sheet['F3'] = f'{round(u2n, 2)} B'
+    c_sheet.merge_cells('A3:D3')
+
+    i1n = s * 1000 / (3 ** (1 / 2) * u1n)
+    i2n = s * 1000 / (3 ** (1 / 2) * u2n)
+    c_sheet['A5'] = 'Номинальные и фазные значения токов'
+    c_sheet.merge_cells('A5:G5')
+    c_sheet['A6'] = f'I_1ном=I_1ф=S/(√3∙U_1 )={s*1e3}/(√3∙{u1n})='
+    c_sheet['F6'] = f'{round(i1n, 2)} A'
+    c_sheet.merge_cells('A6:E6')
+    c_sheet['A7'] = f'I_1ном=I_1ф=S/(√3∙U_2 )={s*1e3}/(√3∙{u2n})='
+    c_sheet['F7'] = f'{round(i2n, 2)} A'
+    c_sheet.merge_cells('A7:E7')
+
+    k = w1 / w2
+    c_sheet['A9'] = 'Коэффициент трансформации'
+    c_sheet.merge_cells('A5:G5')
+    c_sheet['A10'] = f'k=w_1/w_2 ={w1}/{w2}'
+    c_sheet['F10'] = f'{round(k, 2)}'
+    c_sheet.merge_cells('A10:D10')
     return u1fn, u2fn, i1n, i2n, k
 
 
@@ -393,8 +413,8 @@ def main():
         r_sheet['J5'] = 'Контрольные данные'
         r_sheet['J6'] = f'Pk = {pk}W'
         r_sheet['J7'] = f'uk% = {uk}%'
-        p2_max, delt_u_max, zk, rk, xk = step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_sheet,
-                                                c_sheet)
+        p2_max, delt_u_max, zk, rk, xk = step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l,
+                                                w1, w2, s, al, f, r_sheet, c_sheet)
 
         step_5(u1fn, i1n, i2n, p2_max, delt_u_max, rk, xk, r0, x0, c_sheet)
 
