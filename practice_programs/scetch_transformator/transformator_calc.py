@@ -58,8 +58,10 @@ def step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, r=7650
             r_sheet['K1'] = 'Результаты вычислений'
             r_sheet['K2'] = f'{tabl_data[0]} W'
             r_sheet['K3'] = f'{tabl_data[-2]} %'
-            bc = tabl_data[-1]
+            bc = tabl_data[-4]
             px = tabl_data[0]
+            r0 = tabl_data[-2]
+            x0 = tabl_data[-1]
         r_sheet[f'A{row_t2}'] = n
         r_sheet[f'B{row_t2}'] = round(n * u1fn, 2)
         r_sheet[f'C{row_t2}'] = tabl_data[0]
@@ -74,6 +76,7 @@ def step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, r=7650
     px40 = round(px * (bc40 / bc) ** 2 * (40 / 50) ** 1.5, 2)
     px60 = round(px * (bc60 / bc) ** 2 * (60 / 50) ** 1.5, 2)
     print(f'px40/60: {px40}, {px60}')
+    return r0, x0
 
 
 def step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s):
@@ -113,7 +116,7 @@ def step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s):
         print(f'cos: {cosp0}, sin: {sinp0}')
         print(f'z,r,x: {z0}, {r0}, {x0}')
 
-    return px, qx, i0a, i0p, i0, cosp0, i_0, bc
+    return px, qx, i0a, i0p, i0, cosp0, i_0, bc, z0, r0, x0
 
 
 def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_sheet):
@@ -186,8 +189,10 @@ def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_she
     r_sheet['K6'] = f'{round(pk, 2)} W'
     r_sheet['K7'] = f'{round(upp, 2)} %'
 
-    step_4_tabl1(uka, ukp, r_sheet)
+    p2_max, delt_u_max = step_4_tabl1(uka, ukp, r_sheet)
     step_4_tabl2(i2n, u1fn, r_sheet, uka, ukp)
+
+    return p2_max, delt_u_max, zk, rk, xk
 
 
 def step_4_tabl1(uka, ukp, r_sheet):
@@ -211,7 +216,7 @@ def step_4_tabl1(uka, ukp, r_sheet):
             delt_u_max = delt_u
             p2_max = math.degrees(p2)
     print(f'phik: {round(p2_max)}\ndeltUmax: {round(delt_u_max, 2)}')
-    return p2_max
+    return p2_max, delt_u_max
 
 
 def step_4_tabl2(i2n, u1fn, r_sheet, uka, ukp):
@@ -235,15 +240,59 @@ def step_4_tabl2(i2n, u1fn, r_sheet, uka, ukp):
             r_sheet[f'{letter[1]}{ind + 10}'] = round(u2f, 2)
 
 
-def step_6():
+def step_5(u1fn, i1n, i2n, p2_max, delt_u_max, rk, xk, r0, x0):
+    p2_max = math.radians(p2_max)
+    r1 = rk / 2
+    x1 = xk / 2
+    rm = r0
+    xm = x0
+    i0 = 0
+    print(f'r12, x12: {round(r1, 2)}, {round(x1, 2)}')
+    print(f'rm, xm: {round(rm, 2)}, {round(xm, 2)}')
+
+    u2fs = u1fn - delt_u_max
+    i2s = i1n
+    u2s = u2fs * complex(math.cos(p2_max), math.sin(p2_max))
+    print(f'u2f\': {round(u2fs, 2)}')
+    print(f'u2\': {round(u2s.real, 2)} + j{round(u2s.imag, 2)}')
+
+    e2s = u2s + i2s * complex(r1, x1)
+    i1 = - i2s
+    u1 = -e2s + i1 * complex(r1, x1)
+    print(f'E2\': {round(e2s.real, 2)} + j{round(e2s.imag, 2)}')
+    print(f'u1: {round(u1.real, 2)} + j{round(u1.imag, 2)}')
+
+
+def step_6(s, px, pk, r_sheet):
     # KPD.
-    pass
+    px *= 1e-3
+    pk *= 1e-3
+    r_sheet['K9'] = 'Snom,kW'
+    r_sheet['L9'] = 'η\ncosφ_2=1'
+    r_sheet['M9'] = 'η\ncosφ_2=0.7'
+    for ind, kng in enumerate([0, 0.2, 0.4, 0.6, 0.8, 1, 1.2]):
+        r_sheet[f'K{ind + 10}'] = s * kng
+        for cos_val in (1, 0.7):
+            if cos_val == 1:
+                letter = ('L')
+            else:
+                letter = ('M')
+            r_sheet[f'{letter}{ind + 10}'] = round(1 - (px + kng ** 2 * pk) / (kng * s * cos_val + px + kng * pk), 3)
+
+    kng_max = (px / pk) ** (1 / 2)
+    kpd_max = 1 - (px + kng_max ** 2 * pk) / (kng_max * s + px + kng_max * pk)
+    print(f'kng_max: {round(kng_max, 3)}')
+    print(f'kpd_max: {round(kpd_max, 3)}')
 
 
-def step_7():
+def step_7(i1n, uk, rk, xk):
     # Knocking current.
-    pass
-
+    ikust = i1n * 100 / uk
+    kud = 1 + math.exp(-(math.pi * rk / xk))
+    ikm = kud * ikust * 2 ** (1 / 2)
+    print(f'ikust: {round(ikust, 2)}')
+    print(f'kud: {round(kud, 3)}')
+    print(f'ikm: {round(ikm, 2)}')
 
 def main():
     # get data from excel sheet.
@@ -260,7 +309,7 @@ def main():
         v, s, u1n, u2n, w1, w2, sp1, sp2, d1, a1, a2, a12, l, d, pc, pi, hc, hi, c, pk, px, uk, i0 = data
 
         u1fn, u2fn, i1n, i2n, k = step_1(u1n, u2n, s, w1, w2)
-        step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory)
+        r0, x0 = step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory)
         r_sheet['J1'] = 'Контрольные данные'
         r_sheet['J2'] = f'Px = {px}W'
         r_sheet['J3'] = f'i0 = {i0}%'
@@ -271,7 +320,13 @@ def main():
         r_sheet['J5'] = 'Контрольные данные'
         r_sheet['J6'] = f'Pk = {pk}W'
         r_sheet['J7'] = f'uk% = {uk}%'
-        step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_sheet)
+        p2_max, delt_u_max, zk, rk, xk = step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_sheet)
+
+        step_5(u1fn, i1n, i2n, p2_max, delt_u_max, rk, xk, r0, x0)
+
+        step_6(s, px, pk, r_sheet)
+
+        step_7(i1n, uk, rk, xk)
 
         rb.save(f'result//var{row}.xlsx')
 
