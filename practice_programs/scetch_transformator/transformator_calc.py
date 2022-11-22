@@ -78,28 +78,28 @@ def step_1(u1n, u2n, s, w1, w2, c_sheet):
     c_sheet['A1'] = 'Фазные значения номинального напряжения (при соединении Y/Y)'
     c_sheet.merge_cells('A1:G1')
     c_sheet['A2'] = f'U_1фном=U_1ном/√3={u1n}/√3='
-    c_sheet['F2'] = f'{round(u1n, 2)} B'
+    c_sheet['I2'] = f'{round(u1n, 2)} B'
     c_sheet.merge_cells('A2:D2')
     c_sheet['A3'] = f'U_2фном=U_2ном/√3={u2n}/√3='
-    c_sheet['F3'] = f'{round(u2n, 2)} B'
+    c_sheet['I3'] = f'{round(u2n, 2)} B'
     c_sheet.merge_cells('A3:D3')
 
     i1n = s * 1000 / (3 ** (1 / 2) * u1n)
     i2n = s * 1000 / (3 ** (1 / 2) * u2n)
     c_sheet['A5'] = 'Номинальные и фазные значения токов'
     c_sheet.merge_cells('A5:G5')
-    c_sheet['A6'] = f'I_1ном=I_1ф=S/(√3∙U_1 )={s*1e3}/(√3∙{u1n})='
-    c_sheet['F6'] = f'{round(i1n, 2)} A'
+    c_sheet['A6'] = f'I_1ном=I_1ф=S/(√3∙U_1 )={s * 1e3}/(√3∙{u1n})='
+    c_sheet['I6'] = f'{round(i1n, 2)} A'
     c_sheet.merge_cells('A6:E6')
-    c_sheet['A7'] = f'I_1ном=I_1ф=S/(√3∙U_2 )={s*1e3}/(√3∙{u2n})='
-    c_sheet['F7'] = f'{round(i2n, 2)} A'
+    c_sheet['A7'] = f'I_1ном=I_1ф=S/(√3∙U_2 )={s * 1e3}/(√3∙{u2n})='
+    c_sheet['I7'] = f'{round(i2n, 2)} A'
     c_sheet.merge_cells('A7:E7')
 
     k = w1 / w2
     c_sheet['A9'] = 'Коэффициент трансформации'
     c_sheet.merge_cells('A5:G5')
     c_sheet['A10'] = f'k=w_1/w_2 ={w1}/{w2}'
-    c_sheet['F10'] = f'{round(k, 2)}'
+    c_sheet['I10'] = f'{round(k, 2)}'
     c_sheet.merge_cells('A10:D10')
     return u1fn, u2fn, i1n, i2n, k
 
@@ -114,9 +114,20 @@ def step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, c_shee
     li = 2 * c + d
     gc = round(3 * hc * pc * r * 10 ** -6, 2)
     gi = round(2 * li * pi * r * 10 ** -6, 2)
-    print('G: ', gc, gi)
+    c_sheet['A13'] = 'Массы стали стержней и ярм:'
+    c_sheet.merge_cells('A13:E13')
+    c_sheet['A14'] = f'G_с=3h_с∙ρ_ст∙П_с=3∙{hc}∙{pc}∙{r}∙10^(-6)='
+    c_sheet.merge_cells('A14:E14')
+    c_sheet['I14'] = f'{round(gc, 2)} кг'
+    c_sheet['A15'] = f'l_я=2∙c+d=2∙{c}+{d}='
+    c_sheet.merge_cells('A15:E15')
+    c_sheet['I15'] = f'{round(gc, 2)} cm'
+    c_sheet['A16'] = f'G_я=2∙l_я∙ρ_ст∙П_я=2∙{li}∙{pi}∙{r}∙10^(-6)='
+    c_sheet.merge_cells('A16:E16')
+    c_sheet['I16'] = f'{round(gi, 2)} кг'
+    c_sheet['A17'] = 'Плотность холоднокатаной стали ρ_ст=7650 кг/м3'
+    c_sheet.merge_cells('A17:E17')
 
-    row_t2 = 2
     r_sheet['A1'] = 'n'
     r_sheet['B1'] = 'U1f, V'
     r_sheet['C1'] = 'Px, W'
@@ -126,8 +137,9 @@ def step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, c_shee
     r_sheet['G1'] = 'I0, A'
     r_sheet['H1'] = 'cosp0'
 
+    row_t2 = 2
     for n in (0.5, 0.7, 0.8, 0.9, 1, 1.1):
-        tabl_data = step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s)
+        tabl_data = step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s, c_sheet)
         if n == 1:
             r_sheet['K1'] = 'Результаты вычислений'
             r_sheet['K2'] = f'{tabl_data[0]} W'
@@ -149,11 +161,31 @@ def step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, c_shee
     bc60 = round(u1fn * 10 ** 4 / (4.44 * 60 * w1 * pc), 3)
     px40 = round(px * (bc40 / bc) ** 2 * (40 / 50) ** 1.5, 2)
     px60 = round(px * (bc60 / bc) ** 2 * (60 / 50) ** 1.5, 2)
-    print(f'px40/60: {px40}, {px60}')
+    c_sheet['A51'] = 'P_х=P_х50∙(B/B_50 )^2∙(f/f_50 )^1.5'
+    c_sheet.merge_cells('A51:G51')
+    c_sheet['A52'] = 'где Рx50, В50  и  f50 — данные при частоте 50 Гц.'
+    c_sheet.merge_cells('A52:G52')
+    c_sheet['A53'] = 'Индукция при частоте 40 и 60 Гц'
+    c_sheet.merge_cells('A53:G53')
+    c_sheet['A54'] = f'B_с40=(U_1фном∙10^4)/(4.44∙f_40∙w_1∙П_с )=({round(u1fn, 2)}∙10^4)/(4.44∙40∙{w1}∙{pc})='
+    c_sheet.merge_cells('A54:G54')
+    c_sheet['I54'] = f'{round(bc40, 2)} Тл'
+    c_sheet['A55'] = f'B_с60=(U_1фном∙10^4)/(4.44∙f_60∙w_1∙П_с )=({round(u1fn, 2)}∙10^4)/(4.44∙60∙{w1}∙{pc})='
+    c_sheet.merge_cells('A55:G55')
+    c_sheet['I55'] = f'{round(bc60, 2)} Тл'
+    c_sheet['A56'] = 'Потери холостого хода:'
+    c_sheet.merge_cells('A56:G56')
+    c_sheet['A57'] = f'P_x40={round(px, 2)}∙({round(bc40, 2)}/{round(bc, 2)})^2 (40/50)^1.5='
+    c_sheet.merge_cells('A57:G57')
+    c_sheet['I57'] = f'{round(px40)} Вт'
+    c_sheet['A58'] = f'P_x60={round(px, 2)}∙({round(bc60, 2)}/{round(bc, 2)})^2 (60/50)^1.5='
+    c_sheet.merge_cells('A58:G58')
+    c_sheet['I58'] = f'{round(px60)} Вт'
+
     return r0, x0
 
 
-def step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s):
+def step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s, c_sheet):
     u1fn *= n
     bc = round(u1fn * 10 ** 4 / (4.44 * f * w1 * pc), 3)
     bi = round(u1fn * 10 ** 4 / (4.44 * f * w1 * pi), 3)
@@ -182,13 +214,85 @@ def step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s):
     r0 = round(z0 * cosp0, 2)
     x0 = round((z0 ** 2 - r0 ** 2) ** (1 / 2), 2)
     if n == 1:
-        print('B: ', bc, bi)
-        print('T3c: ', bc, accessory[0][c_ac_ind], pc_ac, qc_ac, qzc_ac)
-        print('T3i: ', bi, accessory[0][i_ac_ind], pi_ac, qi_ac, qzi_ac)
-        print(f'i0: {i_0a}, {i_0p}, {i_0}')
-        print(f'I0: {i0a}, {i0p}, {i0}')
-        print(f'cos: {cosp0}, sin: {sinp0}')
-        print(f'z,r,x: {z0}, {r0}, {x0}')
+        c_sheet['A18'] = 'Индукции в стержнях и ярмах'
+        c_sheet.merge_cells('A18:E18')
+        c_sheet['A19'] = f'B_с=(U_1фном∙10^4)/(4.44∙f∙w_1∙П_с )=({round(u1fn, 2)}∙10^4)/(4.44∙50∙{w1}∙{pc})='
+        c_sheet.merge_cells('A19:G19')
+        c_sheet['I19'] = f'{round(bc, 2)} Тл'
+        c_sheet['A20'] = f'B_с=(U_1фном∙10^4)/(4.44∙f∙w_1∙П_с )=({round(u1fn, 2)}∙10^4)/(4.44∙50∙{w1}∙{pi})='
+        c_sheet.merge_cells('A20:G20')
+        c_sheet['I20'] = f'{round(bi, 2)} Тл'
+        c_sheet['A21'] = 'Удельные потери в стали стержней и ярм, определенные по табл. 3 '
+        c_sheet.merge_cells('A21:G21')
+        c_sheet['A22'] = f'                        p_с={pc} Вт/кг          p_я={pi} Вт/кг'
+        c_sheet.merge_cells('A22:G22')
+        c_sheet['A23'] = 'потери холостого хода Рx:'
+        c_sheet.merge_cells('A23:E23')
+        c_sheet['A24'] = f'P_х=K_д∙(p_с∙G_с+p_я∙G_я )=1.25∙({pc}∙{round(gc, 2)}+{pi}∙{round(gi, 2)})='
+        c_sheet.merge_cells('A24:G24')
+        c_sheet['I24'] = f'{round(px, 2)} Вт'
+        c_sheet['A25'] = 'где K_д=1.25'
+
+        c_sheet['A26'] = 'По таблице 3 выбираем значения q_с и q_я, q_зс и q_зя'
+        c_sheet.merge_cells('A26:G26')
+        c_sheet['A27'] = f'          q_с={qc_ac} В·А/кг          q_зс={qzc_ac} В·А/см2'
+        c_sheet.merge_cells('A27:G27')
+        c_sheet['A28'] = f'          q_i={qi_ac} В·А/кг          q_зi={qzi_ac} В·А/см2'
+        c_sheet.merge_cells('A28:G28')
+        c_sheet['A29'] = 'Намагничивающая мощность магнитной системы ( реактивная мощность х.х.)'
+        c_sheet.merge_cells('A29:G29')
+        c_sheet['A30'] = 'Q_х=q_с∙G_с+q_я∙G_я+q_зс∙n_зс∙П_с+q_зя∙n_зя∙П_я'
+        c_sheet.merge_cells('A30:G30')
+        c_sheet['A31'] = f'Q_х={qc_ac}∙{round(gc, 2)}+{qi_ac}∙{round(gi, 2)}+{qzc_ac}∙3∙{pc}+{qzi_ac}∙4∙{pi}='
+        c_sheet.merge_cells('A31:G31')
+        c_sheet['I31'] = f'{qx} ВАр'
+
+        c_sheet['A33'] = 'Ток холостого хода:'
+        c_sheet.merge_cells('A33:G33')
+        c_sheet['A34'] = 'активная составляющая, %'
+        c_sheet.merge_cells('A34:G34')
+        c_sheet['A35'] = f'i_0а=P_х/(10∙S)={round(px, 2)}/(10∙{round(s, 2)})='
+        c_sheet.merge_cells('A35:G35')
+        c_sheet['I35'] = f'{round(i_0a, 2)} %.'
+        c_sheet['A36'] = 'реактивная составляющая, %'
+        c_sheet.merge_cells('A36:G36')
+        c_sheet['A37'] = f'i_0р=Q_х/(10∙S)={round(qx, 2)}/(10∙{round(s, 2)})='
+        c_sheet.merge_cells('A37:G37')
+        c_sheet['I37'] = f'{round(i_0p, 2)} %.'
+        c_sheet['A38'] = 'полный ток холостого хода'
+        c_sheet.merge_cells('A38:G38')
+        c_sheet['A38'] = f'i_0=√(i_0а^2+i_0р^2 )=√({round(i_0a)}^2+{round(i_0p)}^2 )='
+        c_sheet.merge_cells('A38:G38')
+        c_sheet['I38'] = f'{round(i_0, 2)} %.'
+        c_sheet['A39'] = 'pеальный ток холостого хода, A'
+        c_sheet.merge_cells('A39:G39')
+        c_sheet['A40'] = f'I_0а=(i_0а∙I_1фном)/100=({round(i_0a, 2)}∙{round(i1n)})/100='
+        c_sheet.merge_cells('A40:G40')
+        c_sheet['I40'] = f'{round(i0a, 5)} A.'
+        c_sheet['A41'] = f'I_0а=(i_0а∙I_1фном)/100=({round(i_0p, 2)}∙{round(i1n)})/100='
+        c_sheet.merge_cells('A41:G41')
+        c_sheet['I41'] = f'{round(i0p, 5)} A.'
+        c_sheet['A42'] = f'I_0а=(i_0а∙I_1фном)/100=({round(i_0, 2)}∙{round(i1n)})/100='
+        c_sheet.merge_cells('A42:G42')
+        c_sheet['I42'] = f'{round(i0, 5)} A.'
+        c_sheet['A43'] = f'cosφ_0={round(i0a, 5)}/{round(i0, 5)} ='
+        c_sheet.merge_cells('A43:G43')
+        c_sheet['I43'] = f'{round(cosp0, 3)}'
+        c_sheet['A44'] = f'sinφ_0={round(i0p, 5)}/{round(i0, 5)} ='
+        c_sheet.merge_cells('A44:G44')
+        c_sheet['I44'] = f'{round(sinp0, 3)}'
+
+        c_sheet['A46'] = 'б) параметры схемы замещения '
+        c_sheet.merge_cells('A46:G46')
+        c_sheet['A47'] = f'z_0=U_1фном/I_0 ={round(u1fn, 2)}/{round(i0)}='
+        c_sheet.merge_cells('A47:G47')
+        c_sheet['I47'] = f'{round(z0)} Ом'
+        c_sheet['A48'] = f'r_0=z_0∙cosφ_0={round(z0, 2)}∙{round(cosp0, 3)}='
+        c_sheet.merge_cells('A48:G48')
+        c_sheet['I48'] = f'{round(r0, 2)} Ом'
+        c_sheet['A49'] = f'x_0=√(z_0^2-r_0^2 )=√({round(z0, 2)}^2-{round(r0, 2)}^2 )='
+        c_sheet.merge_cells('A49:G49')
+        c_sheet['I49'] = f'{round(x0, 2)} Ом'
 
     return px, qx, i0a, i0p, i0, cosp0, i_0, bc, z0, r0, x0
 
