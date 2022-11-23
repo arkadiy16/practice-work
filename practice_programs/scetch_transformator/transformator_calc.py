@@ -458,15 +458,28 @@ def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_she
     r_sheet['K6'] = f'{round(pk, 2)} W'
     r_sheet['K7'] = f'{round(upp, 2)} %'
 
-    p2_max, delt_u_max = step_4_tabl1(uka, ukp, r_sheet)
+    p2_max, delt_u_max = step_4_tabl1(uka, ukp, r_sheet, c_sheet)
+    c_sheet['A97'] = 'Величину вторичного напряжения определим по формуле '
+    c_sheet.merge_cells('A97:I97')
+    c_sheet['A98'] = f'U_2ф=(U_1фном-ΔU)/K=({round(u1fn, 2)}-ΔU)/25'
+    c_sheet.merge_cells('A98:I98')
+    c_sheet['A99'] = f'ΔU=K_нг(U_ka∙cosφ_2+U_kp∙sinφ_2)=К_нг({round(uka, 2)}∙cosφ_2+{round(ukp, 2)}∙sinφ_2)'
+    c_sheet.merge_cells('A99:I99')
+
     step_4_tabl2(i2n, u1fn, r_sheet, uka, ukp)
 
     return p2_max, delt_u_max, zk, rk, xk
 
 
-def step_4_tabl1(uka, ukp, r_sheet):
+def step_4_tabl1(uka, ukp, r_sheet, c_sheet):
     r_sheet['A9'] = 'φ_2'
     r_sheet['B9'] = 'ΔU, V'
+
+    c_sheet['A93'] = 'б) Изменение вторичного напряжения ΔU=f(φ2) при номинальном токе (Кнг=1)'
+    c_sheet.merge_cells('A93:I93')
+    c_sheet['A94'] = f'ΔU=U_ka∙cosφ_2+U_kp∙sinφ_2={round(uka, 2)}∙cosφ_2+{round(ukp, 2)}∙sinφ_2'
+    c_sheet.merge_cells('A94:I94')
+
     delt_u_max = 0
     p2_max = 0
     for ind, p2 in enumerate([-90, -60, -45, -30, 0, 30, 45, 60, 90]):
@@ -484,7 +497,10 @@ def step_4_tabl1(uka, ukp, r_sheet):
         if delt_u_max < delt_u:
             delt_u_max = delt_u
             p2_max = math.degrees(p2)
-    print(f'phik: {round(p2_max)}\ndeltUmax: {round(delt_u_max, 2)}')
+    c_sheet['A95'] = 'Максимальное изменение напряжения при φ_2=φ_к'
+    c_sheet.merge_cells('A95:I95')
+    c_sheet['A96'] = f'φ_к={round(p2_max, 2)}˚;   ΔU_max={round(uka, 2)}∙cos{round(p2_max, 2)}˚+{round(ukp, 2)}∙sin{round(p2_max, 2)}˚={round(delt_u_max, 2)}, В'
+    c_sheet.merge_cells('A96:I96')
     return p2_max, delt_u_max
 
 
