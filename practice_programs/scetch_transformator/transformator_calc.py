@@ -316,6 +316,19 @@ def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_she
 
         g02 = 8.47 * c * d_avg2 * w2 * sp2 * 10 ** (-5)
         posn2 = 12.75 * g02 * j2 ** 2
+
+        c_sheet['A64'] = f'G_01=8.47∙С∙D_ср1∙w_1∙S_пр1∙10^(-5)=8.47∙3∙{d_avg1}∙{w1}∙{sp1}∙10^(-5)='
+        c_sheet.merge_cells('A64:G64')
+        c_sheet['I64'] = f'{round(g01, 2)}  кг'
+        c_sheet['A65'] = f'G_02=8.47∙С∙D_ср2∙w_2∙S_пр2∙10^(-5)=8.47∙3∙{d_avg2}∙{w2}∙{sp2}∙10^(-5)='
+        c_sheet.merge_cells('A65:G65')
+        c_sheet['I65'] = f'{round(g02, 2)}  кг'
+        c_sheet['A70'] = f'P_осн1=12.75∙J_1^2∙G_01=12.75∙{round(j1, 2)}^2∙{round(g01, 2)}='
+        c_sheet.merge_cells('A70:G70')
+        c_sheet['I70'] = f'{round(posn1, 2)}  Вт'
+        c_sheet['A71'] = f'P_осн2=12.75∙J_2^2∙G_02=12.75∙{round(j2, 2)}^2∙{round(g02, 2)}='
+        c_sheet.merge_cells('A71:G71')
+        c_sheet['I71'] = f'{round(posn2, 2)}  Вт'
     else:
         g01 = 28 * c * d_avg1 * w1 * sp1 * 10 ** (-5)
         posn1 = 2.4 * g01 * j1 ** 2
@@ -323,15 +336,50 @@ def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_she
         g02 = 28 * c * d_avg2 * w2 * sp2 * 10 ** (-5)
         posn2 = 2.4 * g02 * j2 ** 2
 
+        c_sheet['A64'] = f'G_01=28∙c∙d_avg1∙w1∙sp1∙10^(-5)=28∙3∙{round(d_avg1, 2)}∙{round(w1)}∙{sp1}∙10^(-5)='
+        c_sheet.merge_cells('A64:G64')
+        c_sheet['I64'] = f'{round(g01, 2)}  кг'
+        c_sheet['A65'] = f'G_02=28∙c∙d_avg2∙w2∙sp2∙10^(-5)=28∙3∙{round(d_avg2, 2)}∙{round(w2)}∙{sp2}∙10^(-5)='
+        c_sheet.merge_cells('A65:G65')
+        c_sheet['I65'] = f'{round(g02, 2)}  кг'
+        c_sheet['A70'] = f'P_осн1=2.4∙J_1^2∙G_01=2.4∙{round(j1, 2)}^2∙{round(g01, 2)}='
+        c_sheet.merge_cells('A70:G70')
+        c_sheet['I70'] = f'{round(posn1, 2)}  Вт'
+        c_sheet['A71'] = f'P_осн2=2.4∙J_2^2∙G_02=2.4∙{round(j2, 2)}^2∙{round(g02, 2)}='
+        c_sheet.merge_cells('A71:G71')
+        c_sheet['I71'] = f'{round(posn2, 2)}  Вт'
+
     posn = posn1 + posn2
     pk = posn * kdob
-    print(f'd_avg: {d_avg1}, {d_avg2}')
-    print(f'J: {round(j1, 2)}, {round(j2, 2)}')
-    print(f'G0: {round(g01, 2)}, {round(g02, 2)}')
-    print(f'Posni: {round(posn1, 2)}, {round(posn2, 2)}')
-    print(f'Posn: {round(posn, 2)}')
-    print(f'Kdob: {kdob}')
-    print(f'Pk: {round(pk, 2)}')
+
+    c_sheet['A60'] = 'Плотность тока в обмотках'
+    c_sheet.merge_cells('A60:I60')
+    c_sheet['A61'] = f'J_1=I_1ном/S_пр1 ={round(i1n, 2)}/{round(sp1, 2)}='
+    c_sheet.merge_cells('A61:G61')
+    c_sheet['I61'] = f'{round(j1, 2)}  А/мм^2'
+    c_sheet['A62'] = f'J_2=I_2ном/S_пр2 ={round(i2n, 2)}/{round(sp2, 2)}='
+    c_sheet.merge_cells('A62:G62')
+    c_sheet['I62'] = f'{round(j2, 2)}  А/мм^2'
+    c_sheet['A63'] = 'Масса обмоток (обмотки алюминиевые)'
+    c_sheet.merge_cells('A63:G63')
+    c_sheet['A66'] = 'С=3 – число стержней сердечника;'
+    c_sheet.merge_cells('A66:G66')
+    c_sheet['A67'] = f'D_ср1=D_1+2a_1={d1}+2∙{a1}='
+    c_sheet.merge_cells('A67:G67')
+    c_sheet['I67'] = f'{round(d_avg1, 2)}  см'
+    c_sheet['A68'] = f'D_ср2=D_1+2a_1+2a_12+a_2/2={d1}+2∙{a1}+2∙{a12}+{a2}/2='
+    c_sheet.merge_cells('A68:G68')
+    c_sheet['I68'] = f'{round(d_avg2, 2)}  см'
+    c_sheet['A69'] = 'Потери короткого замыкания рассчитываются для каждой обмотки и затем суммируются:'
+    c_sheet.merge_cells('A69:I69')
+    c_sheet['A72'] = f'P_осн=P_осн1+P_осн2={round(posn1, 2)}+{round(posn2, 2)}='
+    c_sheet.merge_cells('A72:G72')
+    c_sheet['I72'] = f'{round(posn, 2)}  Вт'
+    c_sheet['A73'] = 'Потери короткого замыкания трансформатора'
+    c_sheet.merge_cells('A73:I73')
+    c_sheet['A74'] = f'P_к=P_осн∙k_доб={round(posn, 2)}∙{kdob}='
+    c_sheet.merge_cells('A74:G74')
+    c_sheet['I74'] = f'{round(pk, 2)}  Вт'
 
     usv = u1fn / w1
     ss = s / c
@@ -339,29 +387,72 @@ def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_she
     b = 3.1415 * d12 / l
     ap = a12 + (a1 + a2) / 3
     kp = 0.95
-
     uap = pk / (10 * s)
     upp = 7.92 * f * ss * b * ap * kp / (usv ** 2 * 10 ** 3)
     ukp = (uap ** 2 + upp ** 2) ** (1 / 2)
 
-    print(f'up: {round(uap, 2)}, {round(upp, 2)}, {round(ukp, 2)}')
-    print(f'S\': {round(ss, 2)}')
-    print(f'b: {round(b, 2)}')
-    print(f'd12: {d12}')
-    print(f'ap: {round(ap, 2)}')
-    print(f'kp: {kp}')
+    c_sheet['A75'] = f'u_а%={round(pk, 2)}/(10∙{s})=687.7/(10∙25)='
+    c_sheet.merge_cells('A75:G75')
+    c_sheet['I75'] = f'{round(uap, 2)}  %'
+
+    c_sheet['A76'] = f'U_в\'-напряжение в одном витке U_в\'=U_1ф/w_1 ={round(u1fn, 2)}/{w1}='
+    c_sheet.merge_cells('A76:G76')
+    c_sheet['I76'] = f'{round(usv, 2)}'
+    c_sheet['A77'] = f'мощность на один стержень: S\'=S/С= '
+    c_sheet.merge_cells('A77:G77')
+    c_sheet['I77'] = f'{round(ss, 2)} кВА'
+    c_sheet['A78'] = f'd_12=D_1+2a_1+a_12={d1}+2∙{a1}+{a12}='
+    c_sheet.merge_cells('A78:G78')
+    c_sheet['I78'] = f'{round(d12, 2)} см'
+    c_sheet['A79'] = f'β=(π∙d_12)/l=(π∙{d12})/{l}= '
+    c_sheet.merge_cells('A79:G79')
+    c_sheet['I79'] = f'{round(b, 2)}'
+    c_sheet['A80'] = f'a_р=a_12+(a_1+a_2)/3={a12}+({a1}+{a2})/3='
+    c_sheet.merge_cells('A80:G80')
+    c_sheet['I80'] = f'{round(ap, 2)} см'
+    c_sheet['A81'] = f'k_р='
+    c_sheet.merge_cells('A81:G81')
+    c_sheet['I81'] = f'{round(kp, 2)}'
+
+    c_sheet['A82'] = f'u_р%=(7.92∙f∙S\'∙β∙a_р∙k_р∙10^(-3))/(U\'_в^2 )='
+    c_sheet.merge_cells('A82:G82')
+    c_sheet['A83'] = f'u_р%=(7.92∙50∙{round(ss, 2)}∙{round(b, 2)}∙{round(ap, 2)}∙0.95∙10^(-3))/{round(usv, 2)}^2 ='
+    c_sheet.merge_cells('A83:G83')
+    c_sheet['I83'] = f'{round(upp, 2)}  %'
+    c_sheet['A84'] = f'u_к%=√(u_а%^2+u_р%^2)=√({round(uap, 2)}^2+{round(upp, 2)}^2 )='
+    c_sheet.merge_cells('A84:G84')
+    c_sheet['I84'] = f'{round(ukp, 2)}  %'
 
     uk = u1fn * ukp / 100
     uka = u1fn * uap / 100
     ukp = u1fn * upp / 100
-    print(f'Uk: {round(uk, 2)}, {round(uka, 2)}, {round(ukp, 2)}')
+    c_sheet['A85'] = f'U_к=(U_1фном∙u_к%)/100=({round(u1fn, 2)}∙{round(uk, 2)})/100='
+    c_sheet.merge_cells('A85:G85')
+    c_sheet['I85'] = f'{round(uk, 2)} В'
+    c_sheet['A86'] = f'U_кa=(U_1фном∙u_кa%)/100=({round(u1fn, 2)}∙{round(uka, 2)})/100='
+    c_sheet.merge_cells('A86:G86')
+    c_sheet['I86'] = f'{round(uka, 2)} В'
+    c_sheet['A87'] = f'U_кp=(U_1фном∙u_кp%)/100=({round(u1fn, 2)}∙{round(ukp, 2)})/100='
+    c_sheet.merge_cells('A87:G87')
+    c_sheet['I87'] = f'{round(ukp, 2)} В'
 
     zk = uk / i1n
     rk = uka / i1n
     xk = ukp / i1n
     cospk = uka / ukp
-    print(f'zk, rk, xk: {round(zk, 2)}, {round(rk, 2)}, {round(xk)}')
-    print(f'cospk: {round(cospk, 2)}')
+    c_sheet['A88'] = f'z_к=U_к/I_1 ={round(uk, 2)}/{round(i1n, 2)}='
+    c_sheet.merge_cells('A88:G88')
+    c_sheet['I88'] = f'{round(zk, 2)} Ом'
+    c_sheet['A89'] = f'r_к=U_кa/I_1 ={round(ukp, 2)}/{round(i1n, 2)}='
+    c_sheet.merge_cells('A89:G89')
+    c_sheet['I89'] = f'{round(rk, 2)} Ом'
+    c_sheet['A90'] = f'z_к=U_кp/I_1 ={round(uk, 2)}/{round(i1n, 2)}='
+    c_sheet.merge_cells('A90:G90')
+    c_sheet['I90'] = f'{round(xk, 2)} Ом'
+    c_sheet['A91'] = f'cosφ_к=U_ка/U_кр ={round(uka, 2)}/{round(ukp, 2)}='
+    c_sheet.merge_cells('A91:G91')
+    c_sheet['I91'] = f'{round(cospk, 3)}'
+
 
     r_sheet['K5'] = 'Результаты вычислений'
     r_sheet['K6'] = f'{round(pk, 2)} W'
