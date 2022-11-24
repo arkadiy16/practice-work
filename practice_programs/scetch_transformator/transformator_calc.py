@@ -1,5 +1,6 @@
 import openpyxl
 import math
+import turtle
 
 
 def get_data(sheet, row):
@@ -104,7 +105,45 @@ def step_1(u1n, u2n, s, w1, w2, c_sheet):
     return u1fn, u2fn, i1n, i2n, k
 
 
-def step_2():
+s = turtle.getscreen()
+t = turtle.Turtle()
+t.hideturtle()
+t.speed(0)
+def step_2(data):
+    d1, a1, a2, a12, l, d, hc, hi, c = data
+    t.penup()
+    t.goto(-c - (hi - d / 2), hc / 2 + hi)
+    t.pendown()
+    rect(2 * c + 2 * (hi - d / 2), hc + 2 * hi)  # outer rect
+
+    t.penup()
+    tp = t.pos()
+    t.goto(tp[0] + hi / 2 + d / 2, tp[1] - hi)
+    t.pendown()
+
+    coil(hc, a1, a12, a2, (d1 - d) / 2, l)
+
+    t.penup()
+    t.goto(c - d / 2, - hc / 2)
+    t.pendown()
+    coil(-hc, -a1, -a12, -a2, -(d1 - d) / 2, -l)
+
+def rect(width, lenght):
+    for forw in 2 * (width, lenght):
+        t.fd(forw)
+        t.rt(90)
+
+def coil(c_l, a1, a12, a2, a_, l):
+    c_w = 2 * (a1 + a12 + a2)
+    rect(c_w, c_l)
+    t.penup()
+    tp = t.pos()
+    t.goto(tp[0] + a1 + a12 + a2 - a_, tp[1] - (c_l - l) / 2)
+    t.pendown()
+    rect(a1 + a12 + a2, l)
+    t.fd(a2)
+    rect(a12, l)
+
     # Scetch.
     pass
 
@@ -612,6 +651,9 @@ def main():
         data_in_sheet(al, v, s, u1n, u2n, w1, w2, sp1, sp2, d1, a1, a2, a12, l, d, pc, pi,
                       hc, hi, c, pk, px, uk, i0, u_sheet)
         u1fn, u2fn, i1n, i2n, k = step_1(u1n, u2n, s, w1, w2, c_sheet)
+        if v == 12:
+            step_2(list(map(lambda x: 5*x, [d1, a1, a2, a12, l, d, hc, hi, c])))
+            input()
 
         r0, x0 = step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, c_sheet)
 
@@ -632,6 +674,7 @@ def main():
         step_6(s, px, pk, r_sheet, c_sheet)
 
         step_7(i1n, uk, rk, xk, c_sheet)
+
         rb.save(f'result//var{row}.xlsx')
 
 
