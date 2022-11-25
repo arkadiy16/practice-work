@@ -107,11 +107,37 @@ def step_1(u1n, u2n, s, w1, w2, c_sheet):
 
 s = turtle.getscreen()
 t = turtle.Turtle()
-t.hideturtle()
 t.speed(0)
-def step_2(data):
-    d1, a1, a2, a12, l, d, hc, hi, c = data
+t.hideturtle()
+t.screen.screensize(1000, 1000)
+def step_2(data, v):
+    t.clear()
+    m = 2
+    width = 2 * data[-1]+ 2 * (data[-2] - data[-4] / 2)
+    for ms in (1, 2, 2.5, 4, 5, 10, 15, 20, 25, 40, 50):
+        if width / ms <= 15:
+            break
+    print(v,' ', 2 * data[-1]+ 2 * (data[-2] - data[-4] / 2))
+    d1, a1, a2, a12, l, d, hc, hi, c = list(map(lambda x: m*10*x/ms, data))
+    print( 2 * c + 2 * (hi - d / 2))
+    t.pencolor('blue')
+    cletk = 35
+    kwadr = 5 * m
     t.penup()
+
+    t.goto(-kwadr -c - (hi - d / 2), kwadr + hc / 2 + hi)
+    t.pendown()
+    for _ in range(2):
+        for i in (cletk//2)*(1, -1):
+            t.rt(i * 90)
+            t.forward(cletk * kwadr)
+            t.rt(-i*90)
+            t.forward(kwadr)
+        t.rt(90)
+    t.penup()
+    t.home()
+
+    t.pencolor('black')
     t.goto(-c - (hi - d / 2), hc / 2 + hi)
     t.pendown()
     rect(2 * c + 2 * (hi - d / 2), hc + 2 * hi)  # outer rect
@@ -127,6 +153,7 @@ def step_2(data):
     t.goto(c - d / 2, - hc / 2)
     t.pendown()
     coil(-hc, -a1, -a12, -a2, -(d1 - d) / 2, -l)
+    turtle.getscreen().getcanvas().postscript(file=f'var{int(v)}_M1:{ms}.eps')
 
 def rect(width, lenght):
     for forw in 2 * (width, lenght):
@@ -575,20 +602,14 @@ def step_5(u1fn, i1n, i2n, p2_max, delt_u_max, rk, xk, r0, x0, c_sheet):
     rm = r0
     xm = x0
     i0 = 0
-    print(f'r12, x12: {round(r1, 2)}, {round(x1, 2)}')
-    print(f'rm, xm: {round(rm, 2)}, {round(xm, 2)}')
 
     u2fs = u1fn - delt_u_max
     i2s = i1n
     u2s = u2fs * complex(math.cos(p2_max), math.sin(p2_max))
-    print(f'u2f\': {round(u2fs, 2)}')
-    print(f'u2\': {round(u2s.real, 2)} + j{round(u2s.imag, 2)}')
 
     e2s = u2s + i2s * complex(r1, x1)
     i1 = - i2s
     u1 = -e2s + i1 * complex(r1, x1)
-    print(f'E2\': {round(e2s.real, 2)} + j{round(e2s.imag, 2)}')
-    print(f'u1: {round(u1.real, 2)} + j{round(u1.imag, 2)}')
 
 
 def step_6(s, px, pk, r_sheet, c_sheet):
@@ -611,8 +632,6 @@ def step_6(s, px, pk, r_sheet, c_sheet):
 
     kng_max = (px / pk) ** (1 / 2)
     kpd_max = 1 - (px + kng_max ** 2 * pk) / (kng_max * s + px + kng_max * pk)
-    print(f'kng_max: {round(kng_max, 3)}')
-    print(f'kpd_max: {round(kpd_max, 3)}')
 
 
 def step_7(i1n, uk, rk, xk, c_sheet):
@@ -620,9 +639,6 @@ def step_7(i1n, uk, rk, xk, c_sheet):
     ikust = i1n * 100 / uk
     kud = 1 + math.exp(-(math.pi * rk / xk))
     ikm = kud * ikust * 2 ** (1 / 2)
-    print(f'ikust: {round(ikust, 2)}')
-    print(f'kud: {round(kud, 3)}')
-    print(f'ikm: {round(ikm, 2)}')
 
 
 def main():
@@ -633,7 +649,7 @@ def main():
     accessory = get_accessory_table(sheet_a)
     kd = 1.25
     f = 50
-    for row in range(1, 44):
+    for row in range(1, 45):
         rb = openpyxl.Workbook()
         rb.create_sheet()
         rb.create_sheet()
@@ -651,9 +667,7 @@ def main():
         data_in_sheet(al, v, s, u1n, u2n, w1, w2, sp1, sp2, d1, a1, a2, a12, l, d, pc, pi,
                       hc, hi, c, pk, px, uk, i0, u_sheet)
         u1fn, u2fn, i1n, i2n, k = step_1(u1n, u2n, s, w1, w2, c_sheet)
-        if v == 12:
-            step_2(list(map(lambda x: 5*x, [d1, a1, a2, a12, l, d, hc, hi, c])))
-            input()
+        # step_2([d1, a1, a2, a12, l, d, hc, hi, c], v) # scetch
 
         r0, x0 = step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, c_sheet)
 

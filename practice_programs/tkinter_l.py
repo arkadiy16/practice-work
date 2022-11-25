@@ -3,7 +3,7 @@ from tkinter import ttk
 
 def calculate(*args):
     try:
-        value = float(feet.get())
+        value = float(feet_ent.get())
         meters.set(int(0.3048 * value * 10000.0 + 5) / 10000.0)
         v = float(f.get())
         vm.set(v+1)
