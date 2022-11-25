@@ -79,10 +79,10 @@ def step_1(u1n, u2n, s, w1, w2, c_sheet):
     c_sheet['A1'] = 'Фазные значения номинального напряжения (при соединении Y/Y)'
     c_sheet.merge_cells('A1:G1')
     c_sheet['A2'] = f'U_1фном=U_1ном/√3={u1n}/√3='
-    c_sheet['I2'] = f'{round(u1n, 2)} B'
+    c_sheet['I2'] = f'{round(u1fn, 2)} B'
     c_sheet.merge_cells('A2:D2')
     c_sheet['A3'] = f'U_2фном=U_2ном/√3={u2n}/√3='
-    c_sheet['I3'] = f'{round(u2n, 2)} B'
+    c_sheet['I3'] = f'{round(u2fn, 2)} B'
     c_sheet.merge_cells('A3:D3')
 
     i1n = s * 1000 / (3 ** (1 / 2) * u1n)
@@ -117,9 +117,7 @@ def step_2(data, v):
     for ms in (1, 2, 2.5, 4, 5, 10, 15, 20, 25, 40, 50):
         if width / ms <= 15:
             break
-    print(v,' ', 2 * data[-1]+ 2 * (data[-2] - data[-4] / 2))
     d1, a1, a2, a12, l, d, hc, hi, c = list(map(lambda x: m*10*x/ms, data))
-    print( 2 * c + 2 * (hi - d / 2))
     t.pencolor('blue')
     cletk = 35
     kwadr = 5 * m
@@ -187,7 +185,7 @@ def step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, c_shee
     c_sheet['I14'] = f'{round(gc, 2)} кг'
     c_sheet['A15'] = f'l_я=2∙c+d=2∙{c}+{d}='
     c_sheet.merge_cells('A15:E15')
-    c_sheet['I15'] = f'{round(gc, 2)} cm'
+    c_sheet['I15'] = f'{round(li, 2)} cm'
     c_sheet['A16'] = f'G_я=2∙l_я∙ρ_ст∙П_я=2∙{li}∙{pi}∙{r}∙10^(-6)='
     c_sheet.merge_cells('A16:E16')
     c_sheet['I16'] = f'{round(gi, 2)} кг'
@@ -263,7 +261,8 @@ def step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s, c_sheet):
     pi_ac = accessory[1][i_ac_ind]
     qi_ac = accessory[2][i_ac_ind]
     qzi_ac = accessory[3][i_ac_ind]
-
+    if pc == 371:
+        print(c_ac_ind, pc_ac, qc_ac, qzc_ac)
     px = round(kd * (pc_ac * gc + pi_ac * gi), 2)
     qx = round(qc_ac * gc + qi_ac * gi + qzc_ac * 3 * pc + qzi_ac * 4 * pi, 2)
 
@@ -290,7 +289,7 @@ def step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s, c_sheet):
         c_sheet['I20'] = f'{round(bi, 2)} Тл'
         c_sheet['A21'] = 'Удельные потери в стали стержней и ярм, определенные по табл. 3 '
         c_sheet.merge_cells('A21:G21')
-        c_sheet['A22'] = f'                        p_с={pc} Вт/кг          p_я={pi} Вт/кг'
+        c_sheet['A22'] = f'                        p_с={pc_ac} Вт/кг          p_я={pi_ac} Вт/кг'
         c_sheet.merge_cells('A22:G22')
         c_sheet['A23'] = 'потери холостого хода Рx:'
         c_sheet.merge_cells('A23:E23')
@@ -335,10 +334,10 @@ def step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s, c_sheet):
         c_sheet['A40'] = f'I_0а=(i_0а∙I_1фном)/100=({round(i_0a, 2)}∙{round(i1n)})/100='
         c_sheet.merge_cells('A40:G40')
         c_sheet['I40'] = f'{round(i0a, 5)} A.'
-        c_sheet['A41'] = f'I_0а=(i_0а∙I_1фном)/100=({round(i_0p, 2)}∙{round(i1n)})/100='
+        c_sheet['A41'] = f'I_0а=(i_0p∙I_1фном)/100=({round(i_0p, 2)}∙{round(i1n)})/100='
         c_sheet.merge_cells('A41:G41')
         c_sheet['I41'] = f'{round(i0p, 5)} A.'
-        c_sheet['A42'] = f'I_0а=(i_0а∙I_1фном)/100=({round(i_0, 2)}∙{round(i1n)})/100='
+        c_sheet['A42'] = f'I_0=(i_0∙I_1фном)/100=({round(i_0, 2)}∙{round(i1n)})/100='
         c_sheet.merge_cells('A42:G42')
         c_sheet['I42'] = f'{round(i0, 5)} A.'
         c_sheet['A43'] = f'cosφ_0={round(i0a, 5)}/{round(i0, 5)} ='
