@@ -256,13 +256,12 @@ def step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s, c_sheet):
     c_ac_ind = accessory[0].index(nearest_value(accessory[0], bc))
     i_ac_ind = accessory[0].index(nearest_value(accessory[0], bi))
     pc_ac = accessory[1][c_ac_ind]
+    print(accessory)
     qc_ac = accessory[2][c_ac_ind]
     qzc_ac = accessory[3][c_ac_ind]
     pi_ac = accessory[1][i_ac_ind]
     qi_ac = accessory[2][i_ac_ind]
     qzi_ac = accessory[3][i_ac_ind]
-    if pc == 371:
-        print(c_ac_ind, pc_ac, qc_ac, qzc_ac)
     px = round(kd * (pc_ac * gc + pi_ac * gi), 2)
     qx = round(qc_ac * gc + qi_ac * gi + qzc_ac * 3 * pc + qzi_ac * 4 * pi, 2)
 
@@ -454,9 +453,9 @@ def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_she
     kp = 0.95
     uap = pk / (10 * s)
     upp = 7.92 * f * ss * b * ap * kp / (usv ** 2 * 10 ** 3)
-    ukp = (uap ** 2 + upp ** 2) ** (1 / 2)
+    ukp_1 = (uap ** 2 + upp ** 2) ** (1 / 2)
 
-    c_sheet['A75'] = f'u_а%={round(pk, 2)}/(10∙{s})=687.7/(10∙25)='
+    c_sheet['A75'] = f'u_а%={round(pk, 2)}/(10∙{s})='
     c_sheet.merge_cells('A75:G75')
     c_sheet['I75'] = f'{round(uap, 2)}  %'
 
@@ -486,9 +485,9 @@ def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_she
     c_sheet['I83'] = f'{round(upp, 2)}  %'
     c_sheet['A84'] = f'u_к%=√(u_а%^2+u_р%^2)=√({round(uap, 2)}^2+{round(upp, 2)}^2 )='
     c_sheet.merge_cells('A84:G84')
-    c_sheet['I84'] = f'{round(ukp, 2)}  %'
+    c_sheet['I84'] = f'{round(ukp_1, 2)}  %'
 
-    uk = u1fn * ukp / 100
+    uk = u1fn * ukp_1 / 100
     uka = u1fn * uap / 100
     ukp = u1fn * upp / 100
     c_sheet['A85'] = f'U_к=(U_1фном∙u_к%)/100=({round(u1fn, 2)}∙{round(uk, 2)})/100='
@@ -511,7 +510,7 @@ def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_she
     c_sheet['A89'] = f'r_к=U_кa/I_1 ={round(ukp, 2)}/{round(i1n, 2)}='
     c_sheet.merge_cells('A89:G89')
     c_sheet['I89'] = f'{round(rk, 2)} Ом'
-    c_sheet['A90'] = f'z_к=U_кp/I_1 ={round(uk, 2)}/{round(i1n, 2)}='
+    c_sheet['A90'] = f'x_к=U_кp/I_1 ={round(uk, 2)}/{round(i1n, 2)}='
     c_sheet.merge_cells('A90:G90')
     c_sheet['I90'] = f'{round(xk, 2)} Ом'
     c_sheet['A91'] = f'cosφ_к=U_ка/U_кр ={round(uka, 2)}/{round(ukp, 2)}='
@@ -521,7 +520,7 @@ def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_she
 
     r_sheet['K5'] = 'Результаты вычислений'
     r_sheet['K6'] = f'{round(pk, 2)} W'
-    r_sheet['K7'] = f'{round(upp, 2)} %'
+    r_sheet['K7'] = f'{round(ukp_1, 2)} %'
 
     p2_max, delt_u_max = step_4_tabl1(uka, ukp, r_sheet, c_sheet)
     c_sheet['A97'] = 'Величину вторичного напряжения определим по формуле '
@@ -600,15 +599,54 @@ def step_5(u1fn, i1n, i2n, p2_max, delt_u_max, rk, xk, r0, x0, c_sheet):
     x1 = xk / 2
     rm = r0
     xm = x0
+    c_sheet['A101'] = f'R_1=R_2\'=R_k/2={rk}/2='
+    c_sheet.merge_cells('A101:G101')
+    c_sheet['I101'] = f'{r1}Om'
+    c_sheet['A102'] = f'x_1=x_2\'=x_k/2={xk}/2='
+    c_sheet.merge_cells('A102:G102')
+    c_sheet['I102'] = f'{x1}Om'
+    c_sheet['A103'] = f'R_m≈R_0='
+    c_sheet.merge_cells('A103:G103')
+    c_sheet['I103'] = f'{rm}Om'
+    c_sheet['A104'] = f'x_m≈x_0='
+    c_sheet.merge_cells('A104:G104')
+    c_sheet['I104'] = f'{xm}Om'
+
+
+    c_sheet['A105'] = f'Будем считать I_0=0. Тогда I ̇_1=-I ̇_2^'
+    c_sheet.merge_cells('A105:I105')
     i0 = 0
 
     u2fs = u1fn - delt_u_max
+    c_sheet['A106'] = f'U_2ф\'=U_1фном-ΔU={u1fn} - {delt_u_max}='
+    c_sheet.merge_cells('A106:G106')
+    c_sheet['I106'] = f'{u2fs} V'
+
     i2s = i1n
     u2s = u2fs * complex(math.cos(p2_max), math.sin(p2_max))
+    c_sheet['A107'] = f'Пусть I_1=I_2\'={i1n}'
+    c_sheet.merge_cells('A107:G107')
+    c_sheet['A108'] = f'Тогда U_2\'={u2fs}∙e^(j{p2_max}°)={u2s}'
+    c_sheet.merge_cells('A108:I108')
 
     e2s = u2s + i2s * complex(r1, x1)
     i1 = - i2s
     u1 = -e2s + i1 * complex(r1, x1)
+    c_sheet['A109'] = f'E ̇_2\'=U ̇_2\'+ϳx_2\' I ̇_2\'+R_2\' I ̇_2\'; '
+    c_sheet.merge_cells('A109:I109')
+    c_sheet['A110'] = f'R_2\' I ̇_2\'={round(r1, 2)}∙{round(i2s, 2)}={round(r1*i2s, 2)} В;'
+    c_sheet.merge_cells('A110:I110')
+    c_sheet['A110'] = f'ϳx_2\' I ̇_2\'=ϳ{round(x1, 2)}∙{round(i2s, 2)}=ϳ{round(x1*i2s, 2)} В'
+    c_sheet.merge_cells('A110:i110')
+    c_sheet['A111'] = f'E ̇_2\'={round(u2s.real, 2)} + j{round(u2s.imag, 2)}+{round(r1*i2s, 2)}+ϳ{round(x1*i2s, 2)}={round(e2s.real, 2)} + j{round(e2s.imag, 2)} В'
+    c_sheet.merge_cells('A111:i111')
+    c_sheet['A112'] = f'Под углом π⁄2 откладываем Ф_m. '
+    c_sheet.merge_cells('A112:i112')
+    c_sheet['A113'] = f'I ̇_1=-I ̇_2\'=-{round(i2s, 2)} В; E ̇_1=E ̇_2\''
+    c_sheet.merge_cells('A113:i113')
+    c_sheet['A113'] = f'U ̇_1=-E ̇_1+ϳx_1 I ̇_1+R_1 I ̇_1=-{round(e2s.real, 2)} - j{round(e2s.imag, 2)}' \
+                      f'+{round(r1, 2)}∙-{round(i2s, 2)}+ϳ{round(x1, 2)}∙-{round(i2s, 2)}= {round(u1.real, 2)}  j{round(u1.imag, 2)}'
+    c_sheet.merge_cells('A113:i113')
 
 
 def step_6(s, px, pk, r_sheet, c_sheet):
