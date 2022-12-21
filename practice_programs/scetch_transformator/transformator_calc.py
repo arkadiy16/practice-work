@@ -110,26 +110,28 @@ t = turtle.Turtle()
 t.speed(0)
 t.hideturtle()
 t.screen.screensize(1000, 1000)
+
+
 def step_2(data, v):
     t.clear()
     m = 2
-    width = 2 * data[-1]+ 2 * (data[-2] - data[-4] / 2)
+    width = 2 * data[-1] + 2 * (data[-2] - data[-4] / 2)
     for ms in (1, 2, 2.5, 4, 5, 10, 15, 20, 25, 40, 50):
         if width / ms <= 15:
             break
-    d1, a1, a2, a12, l, d, hc, hi, c = list(map(lambda x: m*10*x/ms, data))
+    d1, a1, a2, a12, l, d, hc, hi, c = list(map(lambda x: m * 10 * x / ms, data))
     t.pencolor('blue')
     cletk = 35
     kwadr = 5 * m
     t.penup()
 
-    t.goto(-kwadr -c - (hi - d / 2), kwadr + hc / 2 + hi)
+    t.goto(-kwadr - c - (hi - d / 2), kwadr + hc / 2 + hi)
     t.pendown()
     for _ in range(2):
-        for i in (cletk//2)*(1, -1):
+        for i in (cletk // 2) * (1, -1):
             t.rt(i * 90)
             t.forward(cletk * kwadr)
-            t.rt(-i*90)
+            t.rt(-i * 90)
             t.forward(kwadr)
         t.rt(90)
     t.penup()
@@ -153,10 +155,12 @@ def step_2(data, v):
     coil(-hc, -a1, -a12, -a2, -(d1 - d) / 2, -l)
     turtle.getscreen().getcanvas().postscript(file=f'var{int(v)}_M1:{ms}.eps')
 
+
 def rect(width, lenght):
     for forw in 2 * (width, lenght):
         t.fd(forw)
         t.rt(90)
+
 
 def coil(c_l, a1, a12, a2, a_, l):
     c_w = 2 * (a1 + a12 + a2)
@@ -246,7 +250,7 @@ def step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, c_shee
     c_sheet.merge_cells('A58:G58')
     c_sheet['I58'] = f'{round(px60)} Вт'
 
-    return r0, x0
+    return r0, x0, px
 
 
 def step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s, c_sheet):
@@ -256,7 +260,6 @@ def step_3_tabl(n, u1fn, i1n, w1, pc, pi, f, kd, accessory, gc, gi, s, c_sheet):
     c_ac_ind = accessory[0].index(nearest_value(accessory[0], bc))
     i_ac_ind = accessory[0].index(nearest_value(accessory[0], bi))
     pc_ac = accessory[1][c_ac_ind]
-    print(accessory)
     qc_ac = accessory[2][c_ac_ind]
     qzc_ac = accessory[3][c_ac_ind]
     pi_ac = accessory[1][i_ac_ind]
@@ -517,7 +520,6 @@ def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_she
     c_sheet.merge_cells('A91:G91')
     c_sheet['I91'] = f'{round(cospk, 3)}'
 
-
     r_sheet['K5'] = 'Результаты вычислений'
     r_sheet['K6'] = f'{round(pk, 2)} W'
     r_sheet['K7'] = f'{round(ukp_1, 2)} %'
@@ -532,7 +534,7 @@ def step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l, w1, w2, s, al, f, r_she
 
     step_4_tabl2(i2n, u1fn, r_sheet, uka, ukp)
 
-    return p2_max, delt_u_max, zk, rk, xk
+    return p2_max, delt_u_max, zk, rk, xk, pk
 
 
 def step_4_tabl1(uka, ukp, r_sheet, c_sheet):
@@ -563,7 +565,8 @@ def step_4_tabl1(uka, ukp, r_sheet, c_sheet):
             p2_max = math.degrees(p2)
     c_sheet['A95'] = 'Максимальное изменение напряжения при φ_2=φ_к'
     c_sheet.merge_cells('A95:I95')
-    c_sheet['A96'] = f'φ_к={round(p2_max, 2)}˚;   ΔU_max={round(uka, 2)}∙cos{round(p2_max, 2)}˚+{round(ukp, 2)}∙sin{round(p2_max, 2)}˚={round(delt_u_max, 2)}, В'
+    c_sheet[
+        'A96'] = f'φ_к={round(p2_max, 2)}˚;   ΔU_max={round(uka, 2)}∙cos{round(p2_max, 2)}˚+{round(ukp, 2)}∙sin{round(p2_max, 2)}˚={round(delt_u_max, 2)}, В'
     c_sheet.merge_cells('A96:I96')
     return p2_max, delt_u_max
 
@@ -599,34 +602,34 @@ def step_5(u1fn, i1n, i2n, p2_max, delt_u_max, rk, xk, r0, x0, c_sheet):
     x1 = xk / 2
     rm = r0
     xm = x0
-    c_sheet['A101'] = f'R_1=R_2\'=R_k/2={rk}/2='
+    c_sheet['A101'] = f'R_1=R_2\'=R_k/2={round(rk, 2)}/2='
     c_sheet.merge_cells('A101:G101')
-    c_sheet['I101'] = f'{r1}Om'
-    c_sheet['A102'] = f'x_1=x_2\'=x_k/2={xk}/2='
+    c_sheet['I101'] = f'{round(r1, 2)}Om'
+    c_sheet['A102'] = f'x_1=x_2\'=x_k/2={round(xk, 2)}/2='
     c_sheet.merge_cells('A102:G102')
-    c_sheet['I102'] = f'{x1}Om'
+    c_sheet['I102'] = f'{round(x1, 2)}Om'
     c_sheet['A103'] = f'R_m≈R_0='
     c_sheet.merge_cells('A103:G103')
-    c_sheet['I103'] = f'{rm}Om'
+    c_sheet['I103'] = f'{round(rm, 2)}Om'
     c_sheet['A104'] = f'x_m≈x_0='
     c_sheet.merge_cells('A104:G104')
-    c_sheet['I104'] = f'{xm}Om'
-
+    c_sheet['I104'] = f'{round(xm, 2)}Om'
 
     c_sheet['A105'] = f'Будем считать I_0=0. Тогда I ̇_1=-I ̇_2^'
     c_sheet.merge_cells('A105:I105')
     i0 = 0
 
     u2fs = u1fn - delt_u_max
-    c_sheet['A106'] = f'U_2ф\'=U_1фном-ΔU={u1fn} - {delt_u_max}='
+    c_sheet['A106'] = f'U_2ф\'=U_1фном-ΔU={round(u1fn, 2)} - {round(delt_u_max, 2)}='
     c_sheet.merge_cells('A106:G106')
-    c_sheet['I106'] = f'{u2fs} V'
+    c_sheet['I106'] = f'{round(u2fs, 2)} V'
 
     i2s = i1n
     u2s = u2fs * complex(math.cos(p2_max), math.sin(p2_max))
-    c_sheet['A107'] = f'Пусть I_1=I_2\'={i1n}'
+    c_sheet['A107'] = f'Пусть I_1=I_2\'={round(i1n, 2)}'
     c_sheet.merge_cells('A107:G107')
-    c_sheet['A108'] = f'Тогда U_2\'={u2fs}∙e^(j{p2_max}°)={u2s}'
+    c_sheet[
+        'A108'] = f'Тогда U_2\'={u2fs}∙e^(j{round(math.degrees(p2_max), 2)}°)={round(u2s.real, 2)} + j{round(u2s.imag, 2)}'
     c_sheet.merge_cells('A108:I108')
 
     e2s = u2s + i2s * complex(r1, x1)
@@ -634,25 +637,37 @@ def step_5(u1fn, i1n, i2n, p2_max, delt_u_max, rk, xk, r0, x0, c_sheet):
     u1 = -e2s + i1 * complex(r1, x1)
     c_sheet['A109'] = f'E ̇_2\'=U ̇_2\'+ϳx_2\' I ̇_2\'+R_2\' I ̇_2\'; '
     c_sheet.merge_cells('A109:I109')
-    c_sheet['A110'] = f'R_2\' I ̇_2\'={round(r1, 2)}∙{round(i2s, 2)}={round(r1*i2s, 2)} В;'
+    c_sheet['A110'] = f'R_2\' I ̇_2\'={round(r1, 2)}∙{round(i2s, 2)}={round(r1 * i2s, 2)} В;'
     c_sheet.merge_cells('A110:I110')
-    c_sheet['A110'] = f'ϳx_2\' I ̇_2\'=ϳ{round(x1, 2)}∙{round(i2s, 2)}=ϳ{round(x1*i2s, 2)} В'
-    c_sheet.merge_cells('A110:i110')
-    c_sheet['A111'] = f'E ̇_2\'={round(u2s.real, 2)} + j{round(u2s.imag, 2)}+{round(r1*i2s, 2)}+ϳ{round(x1*i2s, 2)}={round(e2s.real, 2)} + j{round(e2s.imag, 2)} В'
+    c_sheet['A111'] = f'ϳx_2\' I ̇_2\'=ϳ{round(x1, 2)}∙{round(i2s, 2)}=ϳ{round(x1 * i2s, 2)} В'
     c_sheet.merge_cells('A111:i111')
-    c_sheet['A112'] = f'Под углом π⁄2 откладываем Ф_m. '
+    c_sheet[
+        'A112'] = f'E ̇_2\'={round(u2s.real, 2)} + j{round(u2s.imag, 2)}+{round(r1 * i2s, 2)}+ϳ{round(x1 * i2s, 2)}={round(e2s.real, 2)} + j{round(e2s.imag, 2)} В'
     c_sheet.merge_cells('A112:i112')
-    c_sheet['A113'] = f'I ̇_1=-I ̇_2\'=-{round(i2s, 2)} В; E ̇_1=E ̇_2\''
+    c_sheet['A113'] = f'Под углом π⁄2 откладываем Ф_m. '
     c_sheet.merge_cells('A113:i113')
-    c_sheet['A113'] = f'U ̇_1=-E ̇_1+ϳx_1 I ̇_1+R_1 I ̇_1=-{round(e2s.real, 2)} - j{round(e2s.imag, 2)}' \
+    c_sheet['A114'] = f'I ̇_1=-I ̇_2\'=-{round(i2s, 2)} В; E ̇_1=E ̇_2\''
+    c_sheet.merge_cells('A114:i114')
+    c_sheet['A115'] = f'U ̇_1=-E ̇_1+ϳx_1 I ̇_1+R_1 I ̇_1=-{round(e2s.real, 2)} - j{round(e2s.imag, 2)}' \
                       f'+{round(r1, 2)}∙-{round(i2s, 2)}+ϳ{round(x1, 2)}∙-{round(i2s, 2)}= {round(u1.real, 2)}  j{round(u1.imag, 2)}'
-    c_sheet.merge_cells('A113:i113')
+    c_sheet.merge_cells('A115:i115')
 
 
 def step_6(s, px, pk, r_sheet, c_sheet):
     # KPD.
     px *= 1e-3
     pk *= 1e-3
+
+    c_sheet['A117'] = f'Зависимость КПД от нагрузки η=f(P_2 ) '
+    c_sheet.merge_cells('A117:i117')
+    c_sheet['A118'] = f'для cosφ_2=1 и cosφ_2=0,7 '
+    c_sheet.merge_cells('A118:i118')
+    c_sheet['A119'] = f'η=1-(P+K_нг^2∙P_k)/(K_нг ∙S_ном∙cosφ_2+P+K_нг^2∙P_k)='
+    c_sheet.merge_cells('A119:i119')
+    c_sheet['A120'] = f'1-({round(px, 5)}+K_нг^2∙{round(pk, 5)})/(K_нг∙{s}∙cosφ_2+{round(px, 5)}+' \
+                      f'K_нг^2∙{round(pk, 5)})'
+    c_sheet.merge_cells('A120:i120')
+
     r_sheet['K9'] = 'Snom,kW'
     r_sheet['L9'] = 'η\ncosφ_2=1'
     r_sheet['M9'] = 'η\ncosφ_2=0.7'
@@ -665,10 +680,19 @@ def step_6(s, px, pk, r_sheet, c_sheet):
                 letter = ('L')
             else:
                 letter = ('M')
-            r_sheet[f'{letter}{ind + 10}'] = round(1 - (px + kng ** 2 * pk) / (kng * s * cos_val + px + kng * pk), 3)
+            r_sheet[f'{letter}{ind + 10}'] = round(1 - (px + kng ** 2 * pk) /
+                                                   (kng * s * cos_val + px + kng ** 2 * pk), 4)
 
     kng_max = (px / pk) ** (1 / 2)
     kpd_max = 1 - (px + kng_max ** 2 * pk) / (kng_max * s + px + kng_max * pk)
+    c_sheet['A121'] = f'Максимальное значение КПД при cosφ_2=1 '
+    c_sheet.merge_cells('A121:i121')
+    c_sheet['A122'] = f'при '
+    c_sheet.merge_cells('A122:i122')
+    c_sheet['A123'] = f'K_нг=√(P_0/P_k )=√({round(px, 5)}/{round(pk, 5)})={round(kng_max, 3)}'
+    c_sheet.merge_cells('A123:i123')
+    c_sheet['A124'] = f'η_max={round(kpd_max, 4)}'
+    c_sheet.merge_cells('A124:i124')
 
 
 def step_7(i1n, uk, rk, xk, c_sheet):
@@ -676,6 +700,163 @@ def step_7(i1n, uk, rk, xk, c_sheet):
     ikust = i1n * 100 / uk
     kud = 1 + math.exp(-(math.pi * rk / xk))
     ikm = kud * ikust * 2 ** (1 / 2)
+
+    c_sheet['A126'] = f'Ударный ток короткого замыкания '
+    c_sheet.merge_cells('A126:i126')
+    c_sheet['A127'] = f'I_к уст=I_1ном∙100/u_k ={round(i1n, 2)}∙100/{round(uk, 2)}={round(ikust, 2)} А ' \
+                      f'ток установившегося КЗ '
+    c_sheet.merge_cells('A127:i127')
+    c_sheet['A128'] = f'k_уд=(1+e^(-(π∙R_k)/(ω∙L_k )) )=(1+e^(-(π∙{round(rk, 2)})/{round(xk, 2)}))={round(kud, 4)}'
+    c_sheet.merge_cells('A128:i128')
+    c_sheet['A129'] = f'i_км=k_уд∙√2∙I_к уст={round(ikust, 2)}∙√2∙{round(kud, 4)}={round(ikm, 2)} А'
+    c_sheet.merge_cells('A129:i129')
+
+
+def charts(c_sheet, charts_sheet):
+
+    x_data_px = openpyxl.chart.Reference(c_sheet, min_col=2, min_row=2, max_row=8)
+
+    px_u1fn = openpyxl.chart.ScatterChart()
+    px_u1fn.title = 'Px_U1fn'
+    px_u1fn.style = 13
+    px_u1fn.y_axis.title = 'Px'
+    px_u1fn.x_axis.title = 'U1fn'
+    y_data_px_u1fn = openpyxl.chart.Reference(c_sheet, min_col=3, min_row=2, max_row=9)
+    px_u1fn_series = openpyxl.chart.Series(y_data_px_u1fn, x_data_px)
+    px_u1fn.series.append(px_u1fn_series)
+    line = px_u1fn.series[0]
+    line.marker.symbol = 'dot'
+    line.graphicalProperties.line.width = 20000
+    line.graphicalProperties.line.solidFill = 'ff0000'
+    line.marker.graphicalProperties.line.solidFill = '000000'
+    charts_sheet.add_chart(px_u1fn, 'A1')
+
+    i0_u1fn = openpyxl.chart.ScatterChart()
+    i0_u1fn.title = 'i0_U1fn'
+    i0_u1fn.style = 13
+    i0_u1fn.y_axis.title = 'i0'
+    i0_u1fn.x_axis.title = 'U1fn'
+    y_data_i0_u1fn = openpyxl.chart.Reference(c_sheet, min_col=7, min_row=2, max_row=8)
+    i0_u1fn_series = openpyxl.chart.Series(y_data_i0_u1fn, x_data_px)
+    i0_u1fn.series.append(i0_u1fn_series)
+    line = i0_u1fn.series[0]
+    line.marker.symbol = 'dot'
+    line.graphicalProperties.line.width = 20000
+    line.graphicalProperties.line.solidFill = 'ff0000'
+    line.marker.graphicalProperties.line.solidFill = '000000'
+    charts_sheet.add_chart(i0_u1fn, 'j1')
+
+    i0a_u1fn = openpyxl.chart.ScatterChart()
+    i0a_u1fn.title = 'i0a_U1fn'
+    i0a_u1fn.style = 13
+    i0a_u1fn.y_axis.title = 'i0a'
+    i0a_u1fn.x_axis.title = 'U1fn'
+    y_data_i0a_u1fn = openpyxl.chart.Reference(c_sheet, min_col=6, min_row=2, max_row=8)
+    i0a_u1fn_series = openpyxl.chart.Series(y_data_i0a_u1fn, x_data_px)
+    i0a_u1fn.series.append(i0a_u1fn_series)
+    line = i0a_u1fn.series[0]
+    line.marker.symbol = 'dot'
+    line.graphicalProperties.line.width = 20000
+    line.graphicalProperties.line.solidFill = 'ff0000'
+    line.marker.graphicalProperties.line.solidFill = '000000'
+    charts_sheet.add_chart(i0a_u1fn, 'A17')
+
+    i0p_u1fn = openpyxl.chart.ScatterChart()
+    i0p_u1fn.title = 'i0p_U1fn'
+    i0p_u1fn.style = 13
+    i0p_u1fn.y_axis.title = 'i0p'
+    i0p_u1fn.x_axis.title = 'U1fn'
+    y_data_i0p_u1fn = openpyxl.chart.Reference(c_sheet, min_col=5, min_row=2, max_row=8)
+    i0p_u1fn_series = openpyxl.chart.Series(y_data_i0p_u1fn, x_data_px)
+    i0p_u1fn.series.append(i0p_u1fn_series)
+    line = i0p_u1fn.series[0]
+    line.marker.symbol = 'dot'
+    line.graphicalProperties.line.width = 20000
+    line.graphicalProperties.line.solidFill = 'ff0000'
+    line.marker.graphicalProperties.line.solidFill = '000000'
+    charts_sheet.add_chart(i0p_u1fn, 'j17')
+
+    c0p_u1fn = openpyxl.chart.ScatterChart()
+    c0p_u1fn.title = 'c0p_U1fn'
+    c0p_u1fn.style = 13
+    c0p_u1fn.y_axis.title = 'i0'
+    c0p_u1fn.x_axis.title = 'U1fn'
+    y_data_c0p_u1fn = openpyxl.chart.Reference(c_sheet, min_col=8, min_row=2, max_row=8)
+    c0p_u1fn_series = openpyxl.chart.Series(y_data_c0p_u1fn, x_data_px)
+    c0p_u1fn.series.append(c0p_u1fn_series)
+    line = c0p_u1fn.series[0]
+    line.marker.symbol = 'dot'
+    line.graphicalProperties.line.width = 20000
+    line.graphicalProperties.line.solidFill = 'ff0000'
+    line.marker.graphicalProperties.line.solidFill = '000000'
+    charts_sheet.add_chart(c0p_u1fn, 'a32')
+
+    sn_n = openpyxl.chart.ScatterChart()
+    sn_n.title = 'Snom_KPD'
+    sn_n.style = 13
+    sn_n.y_axis.title = 'Snom'
+    sn_n.x_axis.title = 'KPD'
+    sn_n.y_axis.scaling.min = 0.950
+    sn_n.y_axis.scaling.max = 0.990
+    x_data_sn = openpyxl.chart.Reference(c_sheet, min_col=11, min_row=10, max_row=16)
+    for col in range(12, 14):
+        y_data_sn = openpyxl.chart.Reference(c_sheet, min_col=col, min_row=10, max_row=16)
+        sn_n_series = openpyxl.chart.Series(y_data_sn, x_data_sn)
+        sn_n.series.append(sn_n_series)
+    line1 = sn_n.series[0]
+    line1.marker.symbol = 'dot'
+    line1.graphicalProperties.line.width = 20000
+    line1.graphicalProperties.line.solidFill = '00bbff'
+    line1.marker.graphicalProperties.line.solidFill = '000000'
+    line2 = sn_n.series[1]
+    line2.marker.symbol = 'dot'
+    line2.graphicalProperties.line.width = 20000
+    line2.graphicalProperties.line.solidFill = 'ff0000'
+    line2.marker.graphicalProperties.line.solidFill = '000000'
+    charts_sheet.add_chart(sn_n, 'j32')
+
+    du_ph2 = openpyxl.chart.ScatterChart()
+    du_ph2.title = 'du_ph2'
+    du_ph2.style = 13
+    du_ph2.y_axis.title = 'deltU'
+    du_ph2.x_axis.title = 'ph2'
+    du_ph2.x_axis.scaling.min = -90
+    du_ph2.x_axis.scaling.max = 90
+    x_data_ph2 = openpyxl.chart.Reference(c_sheet, min_col=1, min_row=10, max_row=18)
+    y_data_du = openpyxl.chart.Reference(c_sheet, min_col=2, min_row=10, max_row=18)
+    du_ph2_series = openpyxl.chart.Series(y_data_du, x_data_ph2)
+    du_ph2.series.append(du_ph2_series)
+    line = du_ph2.series[0]
+    line.marker.symbol = 'dot'
+    line.graphicalProperties.line.width = 20000
+    line.graphicalProperties.line.solidFill = 'ff0000'
+    line.marker.graphicalProperties.line.solidFill = '000000'
+    charts_sheet.add_chart(du_ph2, 't1')
+
+    u2fn_i2 = openpyxl.chart.ScatterChart()
+    u2fn_i2.title = 'U2fn_I2'
+    u2fn_i2.style = 13
+    u2fn_i2.y_axis.title = 'U2fn'
+    u2fn_i2.x_axis.title = 'I2'
+    x_data_i2 = openpyxl.chart.Reference(c_sheet, min_col=5, min_row=10, max_row=16)
+    for col in (7, 9):
+        y_data_u2fn = openpyxl.chart.Reference(c_sheet, min_col=col, min_row=10, max_row=16)
+        u2fn_i2_series = openpyxl.chart.Series(y_data_u2fn, x_data_i2)
+        u2fn_i2.series.append(u2fn_i2_series)
+    line1 = u2fn_i2.series[0]
+    line1.marker.symbol = 'dot'
+    line1.graphicalProperties.line.width = 20000
+    line1.graphicalProperties.line.solidFill = '00bbff'
+    line1.marker.graphicalProperties.line.solidFill = '000000'
+    line2 = u2fn_i2.series[1]
+    line2.marker.symbol = 'dot'
+    line2.graphicalProperties.line.width = 20000
+    line2.graphicalProperties.line.solidFill = 'ff0000'
+    line2.marker.graphicalProperties.line.solidFill = '000000'
+    charts_sheet.add_chart(u2fn_i2, 't17')
+
+
+
 
 
 def main():
@@ -690,9 +871,11 @@ def main():
         rb = openpyxl.Workbook()
         rb.create_sheet()
         rb.create_sheet()
+        rb.create_sheet()
         r_sheet = rb.active
         u_sheet = rb['Sheet1']
         c_sheet = rb['Sheet2']
+        charts_sheet = rb['Sheet3']
 
         data = get_data(sheet, row)
         v, s, u1n, u2n, w1, w2, sp1, sp2, d1, a1, a2, a12, l, d, pc, pi, hc, hi, c, pk, px, uk, i0 = data
@@ -704,9 +887,16 @@ def main():
         data_in_sheet(al, v, s, u1n, u2n, w1, w2, sp1, sp2, d1, a1, a2, a12, l, d, pc, pi,
                       hc, hi, c, pk, px, uk, i0, u_sheet)
         u1fn, u2fn, i1n, i2n, k = step_1(u1n, u2n, s, w1, w2, c_sheet)
-        # step_2([d1, a1, a2, a12, l, d, hc, hi, c], v) # scetch
+        a1_a2 = sorted([a1, a2])
+        if u1n > u2n:
+            a2, a1 = a1_a2
+        else:
+            a1, a2 = a1_a2
 
-        r0, x0 = step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, c_sheet)
+
+        step_2([d1, a2, a1, a12, l, d, hc, hi, c], v) # scetch
+
+        r0, x0, px_x = step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, c_sheet)
 
         r_sheet['J1'] = 'Контрольные данные'
         r_sheet['J2'] = f'Px = {px}W'
@@ -717,14 +907,16 @@ def main():
         r_sheet['J5'] = 'Контрольные данные'
         r_sheet['J6'] = f'Pk = {pk}W'
         r_sheet['J7'] = f'uk% = {uk}%'
-        p2_max, delt_u_max, zk, rk, xk = step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l,
+        p2_max, delt_u_max, zk, rk, xk, pk_k = step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l,
                                                 w1, w2, s, al, f, r_sheet, c_sheet)
 
         step_5(u1fn, i1n, i2n, p2_max, delt_u_max, rk, xk, r0, x0, c_sheet)
 
-        step_6(s, px, pk, r_sheet, c_sheet)
+        step_6(s, px_x, pk_k, r_sheet, c_sheet)
 
         step_7(i1n, uk, rk, xk, c_sheet)
+
+        charts(r_sheet, charts_sheet)
 
         rb.save(f'result//var{row}.xlsx')
 
