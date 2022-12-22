@@ -115,7 +115,7 @@ t.screen.screensize(1000, 1000)
 def step_2(data, v):
     t.clear()
     m = 2
-    width = 2 * data[-1] + 2 * (data[-2] - data[-4] / 2)
+    width = 2 * data[-1] + (data[-2] / 2 + data[-4] / 2)
     for ms in (1, 2, 2.5, 4, 5, 10, 15, 20, 25, 40, 50):
         if width / ms <= 15:
             break
@@ -140,19 +140,19 @@ def step_2(data, v):
     t.pencolor('black')
     t.goto(-c - (hi - d / 2), hc / 2 + hi)
     t.pendown()
-    rect(2 * c + 2 * (hi - d / 2), hc + 2 * hi)  # outer rect
+    rect(2 * c + (hi / 2 + d / 2), hc + 2 * hi)  # outer rect
 
     t.penup()
     tp = t.pos()
     t.goto(tp[0] + hi / 2 + d / 2, tp[1] - hi)
     t.pendown()
 
-    coil(hc, a1, a12, a2, (d1 - d) / 2, l)
+    coil(hc, a1, a12, a2, (d1 - d) / 2, l, c, d)
 
     t.penup()
     t.goto(c - d / 2, - hc / 2)
     t.pendown()
-    coil(-hc, -a1, -a12, -a2, -(d1 - d) / 2, -l)
+    coil(-hc, -a1, -a12, -a2, -(d1 - d) / 2, -l, -c, -d)
     turtle.getscreen().getcanvas().postscript(file=f'var{int(v)}_M1:{ms}.eps')
 
 
@@ -162,12 +162,12 @@ def rect(width, lenght):
         t.rt(90)
 
 
-def coil(c_l, a1, a12, a2, a_, l):
-    c_w = 2 * (a1 + a12 + a2)
+def coil(c_l, a1, a12, a2, a_, l, c, d):
+    c_w = c - d
     rect(c_w, c_l)
     t.penup()
     tp = t.pos()
-    t.goto(tp[0] + a1 + a12 + a2 - a_, tp[1] - (c_l - l) / 2)
+    t.goto(tp[0] + c_w - (a1 + a12 + a2 + a_), tp[1] - (c_l - l) / 2)
     t.pendown()
     rect(a1 + a12 + a2, l)
     t.fd(a2)
@@ -713,7 +713,6 @@ def step_7(i1n, uk, rk, xk, c_sheet):
 
 
 def charts(c_sheet, charts_sheet):
-
     x_data_px = openpyxl.chart.Reference(c_sheet, min_col=2, min_row=2, max_row=8)
 
     px_u1fn = openpyxl.chart.ScatterChart()
@@ -751,7 +750,7 @@ def charts(c_sheet, charts_sheet):
     i0a_u1fn.style = 13
     i0a_u1fn.y_axis.title = 'i0a'
     i0a_u1fn.x_axis.title = 'U1fn'
-    y_data_i0a_u1fn = openpyxl.chart.Reference(c_sheet, min_col=6, min_row=2, max_row=8)
+    y_data_i0a_u1fn = openpyxl.chart.Reference(c_sheet, min_col=5, min_row=2, max_row=8)
     i0a_u1fn_series = openpyxl.chart.Series(y_data_i0a_u1fn, x_data_px)
     i0a_u1fn.series.append(i0a_u1fn_series)
     line = i0a_u1fn.series[0]
@@ -766,7 +765,7 @@ def charts(c_sheet, charts_sheet):
     i0p_u1fn.style = 13
     i0p_u1fn.y_axis.title = 'i0p'
     i0p_u1fn.x_axis.title = 'U1fn'
-    y_data_i0p_u1fn = openpyxl.chart.Reference(c_sheet, min_col=5, min_row=2, max_row=8)
+    y_data_i0p_u1fn = openpyxl.chart.Reference(c_sheet, min_col=6, min_row=2, max_row=8)
     i0p_u1fn_series = openpyxl.chart.Series(y_data_i0p_u1fn, x_data_px)
     i0p_u1fn.series.append(i0p_u1fn_series)
     line = i0p_u1fn.series[0]
@@ -856,9 +855,6 @@ def charts(c_sheet, charts_sheet):
     charts_sheet.add_chart(u2fn_i2, 't17')
 
 
-
-
-
 def main():
     # get data from excel sheet.
     wb = openpyxl.load_workbook('data.xlsx')
@@ -893,9 +889,7 @@ def main():
         else:
             a1, a2 = a1_a2
 
-
-        step_2([d1, a2, a1, a12, l, d, hc, hi, c], v) # scetch
-
+        step_2([d1, a2, a1, a12, l, d, hc, hi, c], v)  # scetch
         r0, x0, px_x = step_3(r_sheet, s, i1n, u1fn, w1, pc, pi, hc, c, d, f, kd, accessory, c_sheet)
 
         r_sheet['J1'] = 'Контрольные данные'
@@ -908,7 +902,7 @@ def main():
         r_sheet['J6'] = f'Pk = {pk}W'
         r_sheet['J7'] = f'uk% = {uk}%'
         p2_max, delt_u_max, zk, rk, xk, pk_k = step_4(u1fn, i1n, i2n, sp1, sp2, d1, a1, a12, a2, l,
-                                                w1, w2, s, al, f, r_sheet, c_sheet)
+                                                      w1, w2, s, al, f, r_sheet, c_sheet)
 
         step_5(u1fn, i1n, i2n, p2_max, delt_u_max, rk, xk, r0, x0, c_sheet)
 
@@ -917,8 +911,7 @@ def main():
         step_7(i1n, uk, rk, xk, c_sheet)
 
         charts(r_sheet, charts_sheet)
-
-        rb.save(f'result//var{row}.xlsx')
+        #rb.save(f'result//var{row}.xlsx')
 
 
 main()
