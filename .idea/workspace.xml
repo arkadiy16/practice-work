@@ -5,56 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d46ffc32-0e73-483a-b3e8-de38d7965a49" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/g.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var10_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var11_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var12_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var12_M110.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var12_M110g.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var13_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var14_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var15_M115.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var16_M115.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var17_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var18_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var19_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var1_M14.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var20_M115.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var21_M115.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var22_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var23_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var24_M115.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var25_M14.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var26_M14.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var27_M15.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var28_M15.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var29_M15.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var2_M14.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var30_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var31_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var32_M14.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var33_M14.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var34_M15.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var35_M15.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var36_M15.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var37_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var38_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var39_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var3_M15.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var40_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var41_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var42_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var43_M115.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var44_M115.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var4_M15.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var5_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var6_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var7_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var8_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/var9_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/var12_M110.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_programs/Electro_suply/data.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_programs/Electro_suply/e_suply.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_programs/Electro_suply/result.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/result/var5_M110.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_programs/telegram_bot_practice/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_programs/scetch_transformator/transformator_calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/transformator_calc.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,22 +47,23 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\Programmpractice work\practice-work\The Big Book of Small Python Projects" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.transformator_calc">
-    <configuration name="carrotinabox" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.e_suply">
+    <configuration name="e_suply" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice-work" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -114,12 +71,34 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../BBPR" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/practice_programs/Electro_suply" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../BBPR/carrotinabox.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/practice_programs/Electro_suply/e_suply.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="practice-work" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/practice_programs/telegram_bot_practice" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/practice_programs/telegram_bot_practice/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -172,28 +151,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="project9_carrotinabox" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="practice-work" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Big Book of Small Python Projects" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Big Book of Small Python Projects/project9_carrotinabox.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="transformator_calc" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice-work" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -218,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.e_suply" />
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.transformator_calc" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.project10_chohan" />
-        <item itemvalue="Python.project9_carrotinabox" />
-        <item itemvalue="Python.carrotinabox" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +201,10 @@
       <workItem from="1659123339347" duration="80647000" />
       <workItem from="1660339232106" duration="2996000" />
       <workItem from="1660939005683" duration="2523000" />
-      <workItem from="1671664107614" duration="10517000" />
+      <workItem from="1671664107614" duration="10603000" />
+      <workItem from="1673915990643" duration="5731000" />
+      <workItem from="1677609684862" duration="3535000" />
+      <workItem from="1677614233584" duration="3500000" />
     </task>
     <task id="LOCAL-00001" summary="done">
       <created>1653256708240</created>
@@ -470,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660339247754</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Changes in scetch.">
+      <created>1671747665431</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1671747665431</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,9 +466,11 @@
     <MESSAGE value="project 9 done" />
     <MESSAGE value="project 10 done" />
     <MESSAGE value="sql learning" />
-    <option name="LAST_COMMIT_MESSAGE" value="sql learning" />
+    <MESSAGE value="Changes in scetch." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes in scetch." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/result_processing_py$e_suply.coverage" NAME="e_suply Coverage Results" MODIFIED="1677614660837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/practice_programs/Electro_suply" />
     <SUITE FILE_PATH="coverage/practice_work$bouncingdvd.coverage" NAME="bouncingdvd Coverage Results" MODIFIED="1659613710668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../BBPR" />
     <SUITE FILE_PATH="coverage/practice_work$project10_chohan.coverage" NAME="project10_chohan Coverage Results" MODIFIED="1660054957384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
     <SUITE FILE_PATH="coverage/practice_work$sddg.coverage" NAME="sddg Coverage Results" MODIFIED="1659388244564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
@@ -518,6 +487,7 @@
     <SUITE FILE_PATH="coverage/practice_work$project2_Birthday_Paradox.coverage" NAME="project2_Birthday_Paradox Coverage Results" MODIFIED="1659391186550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
     <SUITE FILE_PATH="coverage/practice_work$blackjack.coverage" NAME="blackjack Coverage Results" MODIFIED="1659557986592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../BBPR" />
     <SUITE FILE_PATH="coverage/practice_work$project7_caesarhacker.coverage" NAME="project7_caesarhacker Coverage Results" MODIFIED="1659899655140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
+    <SUITE FILE_PATH="coverage/result_processing_py$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1673927834303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/practice_programs/telegram_bot_practice" />
     <SUITE FILE_PATH="coverage/practice_work$Bagels.coverage" NAME="project1_Bagels Coverage Results" MODIFIED="1659341863653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/practice_work$selenium_learning.coverage" NAME="selenium_learning Coverage Results" MODIFIED="1659124564544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
     <SUITE FILE_PATH="coverage/practice_work$image_site_downloader.coverage" NAME="image_site_downloader Coverage Results" MODIFIED="1659340441070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
