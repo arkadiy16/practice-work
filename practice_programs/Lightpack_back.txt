@@ -1,0 +1,756 @@
+[General]
+LightpackMode=Ambilight
+IsBacklightEnabled=true
+
+[Grab]
+Grabber=DDupl
+IsAvgColorsEnabled=false
+OverBrighten=0
+IsSendDataOnlyIfColorsChanges=false
+Slowdown=50
+LuminosityThreshold=0
+IsMinimumLuminosityEnabled=true
+IsDX1011GrabberEnabled=false
+IsDX9GrabbingEnabled=false
+IsApplyGammaRampEnabled=true
+IsApplyColorTemperatureEnabled=false
+ColorTemperature=6500
+Gamma=1.2
+DownscaleFactor=25
+
+[MoodLamp]
+LiquidMode=true
+Color=#00ff00
+Speed=50
+Lamp=0
+
+[SoundVisualizer]
+Device=-1
+Visualizer=0
+MinColor=#301000
+MaxColor=#0000ff
+LiquidMode=true
+LiquidSpeed=10
+
+[Device]
+RefreshDelay=100
+IsUsbPowerLedDisabled=false
+Brightness=100
+BrightnessCap=100
+Smooth=100
+Gamma=2.004
+ColorDepth=128
+IsDitheringEnabled=false
+
+[LED_1]
+IsEnabled=true
+Position=@Point(12 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_2]
+IsEnabled=true
+Position=@Point(79 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_3]
+IsEnabled=true
+Position=@Point(146 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_4]
+IsEnabled=true
+Position=@Point(213 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_5]
+IsEnabled=true
+Position=@Point(280 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_6]
+IsEnabled=true
+Position=@Point(347 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_7]
+IsEnabled=true
+Position=@Point(414 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_8]
+IsEnabled=true
+Position=@Point(481 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_9]
+IsEnabled=true
+Position=@Point(548 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_10]
+IsEnabled=true
+Position=@Point(615 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_11]
+IsEnabled=true
+Position=@Point(682 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_12]
+IsEnabled=true
+Position=@Point(749 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_13]
+IsEnabled=true
+Position=@Point(816 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_14]
+IsEnabled=true
+Position=@Point(883 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_15]
+IsEnabled=true
+Position=@Point(950 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_16]
+IsEnabled=true
+Position=@Point(1017 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_17]
+IsEnabled=true
+Position=@Point(1084 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_18]
+IsEnabled=true
+Position=@Point(1151 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_19]
+IsEnabled=true
+Position=@Point(1218 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_20]
+IsEnabled=true
+Position=@Point(1285 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_21]
+IsEnabled=true
+Position=@Point(1352 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_22]
+IsEnabled=true
+Position=@Point(1419 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_23]
+IsEnabled=true
+Position=@Point(1486 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_24]
+IsEnabled=true
+Position=@Point(1553 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_25]
+IsEnabled=true
+Position=@Point(1620 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_26]
+IsEnabled=true
+Position=@Point(1687 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_27]
+IsEnabled=true
+Position=@Point(1754 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_28]
+IsEnabled=true
+Position=@Point(1821 959)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_29]
+IsEnabled=true
+Position=@Point(1799 1040)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_30]
+IsEnabled=true
+Position=@Point(1799 973)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_31]
+IsEnabled=true
+Position=@Point(1799 906)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_32]
+IsEnabled=true
+Position=@Point(1799 839)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_33]
+IsEnabled=true
+Position=@Point(1799 772)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_34]
+IsEnabled=true
+Position=@Point(1799 705)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_35]
+IsEnabled=true
+Position=@Point(1799 638)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_36]
+IsEnabled=true
+Position=@Point(1799 571)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_37]
+IsEnabled=true
+Position=@Point(1799 504)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_38]
+IsEnabled=true
+Position=@Point(1799 437)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_39]
+IsEnabled=true
+Position=@Point(1799 370)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_40]
+IsEnabled=true
+Position=@Point(1799 303)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_41]
+IsEnabled=true
+Position=@Point(1799 236)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_42]
+IsEnabled=true
+Position=@Point(1799 169)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_43]
+IsEnabled=true
+Position=@Point(1799 102)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_44]
+IsEnabled=true
+Position=@Point(1799 35)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_45]
+IsEnabled=true
+Position=@Point(1841 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_46]
+IsEnabled=true
+Position=@Point(1774 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_47]
+IsEnabled=true
+Position=@Point(1707 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_48]
+IsEnabled=true
+Position=@Point(1640 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_49]
+IsEnabled=true
+Position=@Point(1573 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_50]
+IsEnabled=true
+Position=@Point(1506 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_51]
+IsEnabled=true
+Position=@Point(1439 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_52]
+IsEnabled=true
+Position=@Point(1372 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_53]
+IsEnabled=true
+Position=@Point(1305 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_54]
+IsEnabled=true
+Position=@Point(1238 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_55]
+IsEnabled=true
+Position=@Point(1171 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_56]
+IsEnabled=true
+Position=@Point(1104 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_57]
+IsEnabled=true
+Position=@Point(1037 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_58]
+IsEnabled=true
+Position=@Point(970 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_59]
+IsEnabled=true
+Position=@Point(903 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_60]
+IsEnabled=true
+Position=@Point(836 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_61]
+IsEnabled=true
+Position=@Point(769 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_62]
+IsEnabled=true
+Position=@Point(702 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_63]
+IsEnabled=true
+Position=@Point(635 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_64]
+IsEnabled=true
+Position=@Point(568 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_65]
+IsEnabled=true
+Position=@Point(501 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_66]
+IsEnabled=true
+Position=@Point(434 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_67]
+IsEnabled=true
+Position=@Point(367 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_68]
+IsEnabled=true
+Position=@Point(300 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_69]
+IsEnabled=true
+Position=@Point(233 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_70]
+IsEnabled=true
+Position=@Point(166 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_71]
+IsEnabled=true
+Position=@Point(99 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_72]
+IsEnabled=true
+Position=@Point(32 0)
+Size=@Size(67 121)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_73]
+IsEnabled=true
+Position=@Point(0 8)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_74]
+IsEnabled=true
+Position=@Point(0 74)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_75]
+IsEnabled=true
+Position=@Point(0 140)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_76]
+IsEnabled=true
+Position=@Point(0 206)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_77]
+IsEnabled=true
+Position=@Point(0 272)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_78]
+IsEnabled=true
+Position=@Point(0 338)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_79]
+IsEnabled=true
+Position=@Point(0 404)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_80]
+IsEnabled=true
+Position=@Point(0 470)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_81]
+IsEnabled=true
+Position=@Point(0 536)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_82]
+IsEnabled=true
+Position=@Point(0 602)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_83]
+IsEnabled=true
+Position=@Point(0 668)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_84]
+IsEnabled=true
+Position=@Point(0 734)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_85]
+IsEnabled=true
+Position=@Point(0 800)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_86]
+IsEnabled=true
+Position=@Point(0 866)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_87]
+IsEnabled=true
+Position=@Point(0 932)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_88]
+IsEnabled=true
+Position=@Point(0 998)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+
+[LED_89]
+IsEnabled=true
+Position=@Point(0 1064)
+Size=@Size(121 67)
+CoefRed=1
+CoefGreen=1
+CoefBlue=1
+

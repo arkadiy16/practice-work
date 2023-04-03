@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d46ffc32-0e73-483a-b3e8-de38d7965a49" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/practice_programs/Electro_suply/data.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/Electro_suply/e_suply.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/Electro_suply/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/scetch_transformator/result/var5_M110.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_programs/telegram_bot_practice/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_programs/Lightpack.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_programs/Lightpack_back.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_programs/script.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_programs/Electro_suply/data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/practice_programs/Electro_suply/data.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +61,7 @@
       <recent name="G:\Programmpractice work\practice-work\The Big Book of Small Python Projects" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.e_suply">
+  <component name="RunManager" selected="Python.script">
     <configuration name="e_suply" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice-work" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -129,7 +128,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="project10_chohan" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="script" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="practice-work" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -137,12 +136,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/The Big Book of Small Python Projects" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/practice_programs" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/The Big Book of Small Python Projects/project10_chohan.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/practice_programs/script.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -175,11 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.script" />
         <item itemvalue="Python.e_suply" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.transformator_calc" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.project10_chohan" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +203,8 @@
       <workItem from="1671664107614" duration="10603000" />
       <workItem from="1673915990643" duration="5731000" />
       <workItem from="1677609684862" duration="3535000" />
-      <workItem from="1677614233584" duration="3500000" />
+      <workItem from="1677614233584" duration="3564000" />
+      <workItem from="1680559916598" duration="5825000" />
     </task>
     <task id="LOCAL-00001" summary="done">
       <created>1653256708240</created>
@@ -437,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671747665431</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Electric suply calc.">
+      <created>1677627525636</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1677627525636</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +474,8 @@
     <MESSAGE value="project 10 done" />
     <MESSAGE value="sql learning" />
     <MESSAGE value="Changes in scetch." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes in scetch." />
+    <MESSAGE value="Electric suply calc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Electric suply calc." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/result_processing_py$e_suply.coverage" NAME="e_suply Coverage Results" MODIFIED="1677614660837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/practice_programs/Electro_suply" />
@@ -494,6 +502,7 @@
     <SUITE FILE_PATH="coverage/practice_work$main.coverage" NAME="main Coverage Results" MODIFIED="1660941113812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Programm/pythonProject" />
     <SUITE FILE_PATH="coverage/result_processing_py$transformator_calc.coverage" NAME="transformator_calc Coverage Results" MODIFIED="1671725520403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/practice_programs/scetch_transformator" />
     <SUITE FILE_PATH="coverage/practice_work$Strong_Password_Detection.coverage" NAME="Strong Password Detection Coverage Results" MODIFIED="1653257801190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/re" />
+    <SUITE FILE_PATH="coverage/result_processing_py$script.coverage" NAME="script Coverage Results" MODIFIED="1680565554176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/practice_programs" />
     <SUITE FILE_PATH="coverage/practice_work$project4_blackjeck.coverage" NAME="project4_blackjeck Coverage Results" MODIFIED="1659558557691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
     <SUITE FILE_PATH="coverage/practice_work$com_rating_joyreactor__1_.coverage" NAME="com_rating_joyreactor (1) Coverage Results" MODIFIED="1658303405331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Automare the boring stuff with python/WEB SCRAPING" />
     <SUITE FILE_PATH="coverage/practice_work$project3_bitmap.coverage" NAME="project3_bitmap Coverage Results" MODIFIED="1659448410453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/The Big Book of Small Python Projects" />
